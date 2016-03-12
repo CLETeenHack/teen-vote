@@ -1,0 +1,17 @@
+default: &default
+      adapter: postgresql
+      encoding: unicode
+      pool: 5
+      template: template0
+
+development:
+  <<: *default
+  database: vote_for_stuff_development
+
+test:
+  <<: *default
+  database: vote_for_stuff_test
+
+production:
+  <<: *default
+  database: vote_for_stuff_production
