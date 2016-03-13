@@ -1,0 +1,10 @@
+<h1>Issues#index</h1>
+<p>Find me in app/views/issues/index.html.erb</p>
+
+<ul>
+<% @issues.each do |issue| %>
+  <li>
+    <%= link_to issue.title, issue %>
+  </li>
+<% end %>
+</ul>

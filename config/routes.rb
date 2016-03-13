@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :issues, only: [:show, :index]
+  root 'home#index'
   namespace :admin do
     resources :issues
   end
