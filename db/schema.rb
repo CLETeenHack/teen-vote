@@ -51,14 +51,12 @@ ActiveRecord::Schema.define(version: 20160313020140) do
 
   create_table "votes", force: :cascade do |t|
     t.integer  "voter_id"
-    t.integer  "issue_id"
     t.integer  "choice_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "votes", ["choice_id"], name: "index_votes_on_choice_id", using: :btree
-  add_index "votes", ["issue_id"], name: "index_votes_on_issue_id", using: :btree
   add_index "votes", ["voter_id"], name: "index_votes_on_voter_id", using: :btree
 
   add_foreign_key "choices", "issues"
