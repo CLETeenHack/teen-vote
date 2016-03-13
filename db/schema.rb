@@ -62,6 +62,5 @@ ActiveRecord::Schema.define(version: 20160313020140) do
   add_foreign_key "choices", "issues"
   add_foreign_key "issues", "issue_types"
   add_foreign_key "votes", "choices"
-  add_foreign_key "votes", "issues"
   add_foreign_key "votes", "voters"
 end

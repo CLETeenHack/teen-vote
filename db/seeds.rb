@@ -22,7 +22,4 @@ issue = Issue.find_or_create_by(
 palpatine = issue.choices.find_or_create_by(title: 'Palpatine')
 valorum = issue.choices.find_or_create_by(title: 'Valorum')
 
-issue.votes.find_or_create_by(
-  choice_id: palpatine.id,
-  voter_id: voter.id,
-)
+palpatine.votes.find_or_create_by(voter_id: voter.id)

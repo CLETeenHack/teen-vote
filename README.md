@@ -3,7 +3,7 @@ This year we'll be building a voting app for high school students.
 
 ## Getting Started
 The easiest way to get started writing code for this project is to
-create an account on [Cloud9 IDE](https://c9.io)  Cloud9 is a tool that
+create an account on [Cloud9 IDE](https://c9.io).  Cloud9 is a tool that
 lets you write code and run it within a web browser.
 
 Once you are signed up, you'll need to talk to your mentor about forking
