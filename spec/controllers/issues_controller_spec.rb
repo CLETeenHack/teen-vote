@@ -2,17 +2,16 @@ require 'rails_helper'
 
 RSpec.describe IssuesController, type: :controller do
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-  end
+  context 'JSON API' do
+    describe "GET #index" do
+      it "returns http success" do
+        get :index
+        expect(response).to have_http_status(:success)
+      end
 
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
+      it 'returns all issues'
+      it 'includes the issue links'
+      it 'includes the choices'
     end
   end
 

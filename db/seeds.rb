@@ -6,10 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-state_issue = IssueType.find_or_create_by(title: 'State Issues')
-national_issue = IssueType.find_or_create_by(title: 'National Issues')
+school = School.find_or_create_by(name: 'Test School')
+state_issue = IssueType.find_or_create_by(title: 'State Issues', state: true)
+national_issue = IssueType.find_or_create_by(title: 'National Issues', national: true)
 
-voter = Voter.find_or_create_by(unique_key: 'test-voter')
+voter = Voter.find_or_create_by(
+  registration_number: 'test-number',
+  gender: 'f',
+  school_year: 'Senior',
+)
 
 issue = Issue.find_or_create_by(
   title: 'Supreme Chancellor',
