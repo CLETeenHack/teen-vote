@@ -13,6 +13,7 @@ fork.
 Once you have your code in Cloud9 you'll need to run the setup to create
 the database and insert seed data.  Within a bash shell run this command:
 ```
+gem install bundler
 sh ./script/setup_cloud9
 ```
 
