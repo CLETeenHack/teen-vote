@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :issues
     resources :votes
+    resources :voters
     resources :schools
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -25,6 +25,18 @@
       ]
     },
     {
+      "name": "Voters",
+      "examples": [
+        {
+          "description": "Creating a Voter",
+          "link": "voters/creating_a_voter.json",
+          "groups": "all",
+          "route": "/api/voters",
+          "method": "post"
+        }
+      ]
+    },
+    {
       "name": "Votes",
       "examples": [
         {

@@ -1,0 +1,65 @@
+{
+  "resource": "Voters",
+  "http_method": "POST",
+  "route": "/api/voters",
+  "description": "Creating a Voter",
+  "explanation": "This creates an 'unauthenticated' voter. Use this when a student doesn't have a registration number",
+  "parameters": [
+    {
+      "required": true,
+      "scope": "voter",
+      "name": "school_id",
+      "description": "Voter school"
+    },
+    {
+      "scope": "voter",
+      "name": "gender",
+      "description": "Voter gender"
+    },
+    {
+      "scope": "voter",
+      "name": "will_be_eighteen",
+      "description": "Voter will be eighteen"
+    },
+    {
+      "scope": "voter",
+      "name": "school_year",
+      "description": "Voter school year"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/voters",
+      "request_body": "voter[school_id]=123&voter[gender]=f&voter[will_be_eighteen]=false&voter[school_year]=Sophmore",
+      "request_headers": {
+        "Accept": "application/json",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"voter\": {\n    \"id\": 128,\n    \"created_at\": \"2016-03-21T06:05:10.763Z\",\n    \"updated_at\": \"2016-03-21T06:05:10.763Z\"\n  }\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"eb33f1a021f47252bbe823725be8dbb1\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "89240431-14d3-4853-9402-18cd48dffec4",
+        "X-Runtime": "0.016262",
+        "Content-Length": "100"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}
