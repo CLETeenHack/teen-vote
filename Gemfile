@@ -21,8 +21,6 @@ gem 'rspec_api_documentation'
 gem 'apitome'
 # JSON serializers
 gem 'active_model_serializers'
-# Pagination
-gem 'will_paginate'
 
 group :development, :test do
   gem 'pry-rails'
