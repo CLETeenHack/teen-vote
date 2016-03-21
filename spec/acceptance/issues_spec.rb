@@ -9,7 +9,7 @@ resource 'Issues' do
   end
 
   get '/api/issues' do
-    example 'Listing issues' do
+    example 'Listing Issues' do
       do_request
 
       expect(status).to eq 200
@@ -18,6 +18,10 @@ resource 'Issues' do
       issue = data[:issues].first
       expect(issue[:choices].first).to include(title: 'Yes')
       expect(issue[:votes_url]).to include('/votes')
+      expect(issue[:issue_links].first).to include(
+        title: 'Test Link',
+        href: 'http://www.example.com',
+      )
     end
   end
 end

@@ -28,8 +28,8 @@ shared_context 'api_data' do
 
   let!(:vote_yes) do
     choice_yes.votes.create!(
-      voter: voter,
-      choice: choice_yes,
+      voter_id: voter.id,
+      choice_id: choice_yes.id,
     )
   end
 
@@ -41,6 +41,16 @@ shared_context 'api_data' do
       registration_number: SecureRandom.uuid,
       will_be_eighteen: false,
       authenticated: true,
+    )
+  end
+
+  let!(:issue_link) do
+    IssueLink.create!(
+      issue: issue,
+      href: 'http://www.example.com',
+      title: 'Test Link',
+      image_url: 'http://en.wikifur.com/w/images/f/f3/Troll.png',
+      description: 'Lorem Ipsum ...',
     )
   end
 end

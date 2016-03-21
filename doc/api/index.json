@@ -4,7 +4,7 @@
       "name": "Issues",
       "examples": [
         {
-          "description": "Listing issues",
+          "description": "Listing Issues",
           "link": "issues/listing_issues.json",
           "groups": "all",
           "route": "/api/issues",
@@ -13,11 +13,30 @@
       ]
     },
     {
+      "name": "Schools",
+      "examples": [
+        {
+          "description": "Listing Schools",
+          "link": "schools/listing_schools.json",
+          "groups": "all",
+          "route": "/api/schools",
+          "method": "get"
+        }
+      ]
+    },
+    {
       "name": "Votes",
       "examples": [
         {
-          "description": "Listing votes",
-          "link": "votes/listing_votes.json",
+          "description": "Creating a Vote",
+          "link": "votes/creating_a_vote.json",
+          "groups": "all",
+          "route": "/api/votes",
+          "method": "post"
+        },
+        {
+          "description": "Listing Votes by Issue Id",
+          "link": "votes/listing_votes_by_issue_id.json",
           "groups": "all",
           "route": "/api/votes",
           "method": "get"

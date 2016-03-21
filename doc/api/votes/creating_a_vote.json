@@ -1,0 +1,68 @@
+{
+  "resource": "Votes",
+  "http_method": "POST",
+  "route": "/api/votes",
+  "description": "Creating a Vote",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "scope": "vote",
+      "name": "choice_id",
+      "description": "Vote choice"
+    },
+    {
+      "required": true,
+      "scope": "vote",
+      "name": "registration_number",
+      "description": "Vote registration number"
+    },
+    {
+      "required": false,
+      "scope": "vote",
+      "name": "understand_this",
+      "description": "Vote understand this"
+    },
+    {
+      "required": false,
+      "scope": "vote",
+      "name": "care_about_this",
+      "description": "Vote care about this"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/votes",
+      "request_body": "vote[choice_id]=241&vote[registration_number]=7d62d57e-cb58-4bdf-bc1c-e6c0cd97b877",
+      "request_headers": {
+        "Accept": "application/json",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"vote\": {\n    \"id\": 78,\n    \"choice_id\": 241,\n    \"created_at\": \"2016-03-21T05:47:03.656Z\",\n    \"updated_at\": \"2016-03-21T05:47:03.656Z\",\n    \"voter_id\": 87\n  }\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"fe9fcc67e640e504355c5bcaf30f4c3c\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "b21da216-401f-4e5b-9e80-dba576d64132",
+        "X-Runtime": "0.008425",
+        "Content-Length": "128"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "resource": "Schools",
+  "http_method": "GET",
+  "route": "/api/schools",
+  "description": "Listing Schools",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/schools",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"schools\": [\n    {\n      \"id\": 85,\n      \"name\": \"5d788ced-c39e-45fb-9653-49c94c1d0724\",\n      \"created_at\": \"2016-03-21T05:47:03.500Z\",\n      \"updated_at\": \"2016-03-21T05:47:03.500Z\",\n      \"latitude\": null,\n      \"longitude\": null\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"acf6afc972df5958ed0a5d5edc0f3ef6\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "27b4c0b4-25d2-4e3b-972a-43bc23e79765",
+        "X-Runtime": "0.019247",
+        "Content-Length": "182"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}
