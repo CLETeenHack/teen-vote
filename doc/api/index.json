@@ -1,0 +1,28 @@
+{
+  "resources": [
+    {
+      "name": "Issues",
+      "examples": [
+        {
+          "description": "Listing issues",
+          "link": "issues/listing_issues.json",
+          "groups": "all",
+          "route": "/api/issues",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Votes",
+      "examples": [
+        {
+          "description": "Listing votes",
+          "link": "votes/listing_votes.json",
+          "groups": "all",
+          "route": "/api/votes",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "resource": "Votes",
+  "http_method": "GET",
+  "route": "/api/votes",
+  "description": "Listing votes",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "issue_id",
+      "description": " issue"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/votes?issue_id=60",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "issue_id": "60"
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"votes\": [\n    {\n      \"id\": 14,\n      \"voter_id\": 16,\n      \"choice_id\": 99,\n      \"created_at\": \"2016-03-21T05:14:49.159Z\",\n      \"updated_at\": \"2016-03-21T05:14:49.159Z\",\n      \"understand_this\": null,\n      \"care_about_this\": null\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"fda632b0b6bdfdacc29c01935c2c3627\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "5649c402-b076-4396-9ad0-d2b5618b119f",
+        "X-Runtime": "0.017353",
+        "Content-Length": "176"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

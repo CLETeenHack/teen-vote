@@ -1,0 +1,44 @@
+{
+  "resource": "Issues",
+  "http_method": "GET",
+  "route": "/api/issues",
+  "description": "Listing issues",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/issues",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"issues\": [\n    {\n      \"title\": \"Test Issue\",\n      \"description\": \"Lorem ipsum...\",\n      \"issue_type_id\": 37,\n      \"voting_open_time\": \"2016-03-26T05:14:48.998Z\",\n      \"voting_closed_time\": \"2016-03-27T05:14:48.998Z\",\n      \"ordinal\": 1,\n      \"created_at\": \"2016-03-21T05:14:49.012Z\",\n      \"updated_at\": \"2016-03-21T05:14:49.012Z\",\n      \"votes_url\": \"http://example.com/api/votes?issue_id=59\",\n      \"choices\": [\n        {\n          \"title\": \"Yes\",\n          \"created_at\": \"2016-03-21T05:14:49.075Z\",\n          \"updated_at\": \"2016-03-21T05:14:49.075Z\",\n          \"total_votes\": 1\n        },\n        {\n          \"title\": \"No\",\n          \"created_at\": \"2016-03-21T05:14:49.085Z\",\n          \"updated_at\": \"2016-03-21T05:14:49.085Z\",\n          \"total_votes\": 0\n        }\n      ]\n    }\n  ]\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"65a611e59d9d7d084f7129083dcaef6b\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "c0d80548-394a-481c-9516-e0e6d5c5db30",
+        "X-Runtime": "0.022492",
+        "Content-Length": "561"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}
