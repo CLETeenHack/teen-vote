@@ -23,6 +23,6 @@ to have pushed to the main repository, you can work with your mentor on
 opening a Pull Request to get your changes merged.
 
 After your changes are reviewed and merged, we'll deploy your changes to
-the latest staging server here: https://vote-for-stuff.herokuapp.com
+the latest staging server here: https://teen-vote.herokuapp.com
 
 Happy Coding!
