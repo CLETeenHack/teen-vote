@@ -77,21 +77,7 @@ ActiveRecord::Schema.define(version: 20160321033752) do
     t.boolean  "authenticated"
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.integer  "voter_id"
-    t.integer  "choice_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.boolean  "understand_this"
-    t.boolean  "care_about_this"
-  end
-
-  add_index "votes", ["choice_id"], name: "index_votes_on_choice_id", using: :btree
-  add_index "votes", ["voter_id"], name: "index_votes_on_voter_id", using: :btree
-
   add_foreign_key "choices", "issues"
   add_foreign_key "issue_links", "issues"
   add_foreign_key "issues", "issue_types"
-  add_foreign_key "votes", "choices"
-  add_foreign_key "votes", "voters"
 end

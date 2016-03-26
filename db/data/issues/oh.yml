@@ -1,0 +1,12 @@
+-   title: 'State Issues'
+    state: true
+    issues:
+      - title: 'Most Sinister Villian'
+        description: 'The most feared and sinister villian in the universe'
+        choices:
+        - title: 'Darkseid'
+          party: 'DC'
+        - title: 'Joker'
+          party: 'DC'
+        - title: 'Mr. Mxyzptlk'
+          party: 'DC'
