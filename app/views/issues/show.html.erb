@@ -3,11 +3,11 @@
 
 <h2><%= @issue.title %></h2>
 <p><%= @issue.description %></p>
-<h3>Votes</h3>
+<h3>Choices</h3>
 <ul>
   <% @issue.choices.each do |choice| %>
     <li>
-      <%= choice.title %>: <%= choice.votes.count %>
+      <%= choice.title %>
     </li>
   <% end %>
 </ul>
