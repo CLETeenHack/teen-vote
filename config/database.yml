@@ -1,17 +1,19 @@
 default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/teen_vote_development.sql
+
+test:
+  <<: *default
+  database: db/teen_vote_test.sql
+
+production:
+  database: teen_vote_production
   adapter: postgresql
   encoding: unicode
   pool: 5
   template: template0
-
-development:
-  <<: *default
-  database: teen_vote_development
-
-test:
-  <<: *default
-  database: teen_vote_test
-
-production:
-  <<: *default
-  database: teen_vote_production

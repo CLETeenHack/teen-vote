@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160321033752) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "choices", force: :cascade do |t|
     t.integer  "issue_id"
     t.string   "title"
@@ -23,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160321033752) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "choices", ["issue_id"], name: "index_choices_on_issue_id", using: :btree
+  add_index "choices", ["issue_id"], name: "index_choices_on_issue_id"
 
   create_table "issue_links", force: :cascade do |t|
     t.integer  "issue_id"
@@ -35,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160321033752) do
     t.datetime "updated_at",              null: false
   end
 
-  add_index "issue_links", ["issue_id"], name: "index_issue_links_on_issue_id", using: :btree
+  add_index "issue_links", ["issue_id"], name: "index_issue_links_on_issue_id"
 
   create_table "issue_types", force: :cascade do |t|
     t.string   "title"
@@ -56,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160321033752) do
     t.integer  "ordinal"
   end
 
-  add_index "issues", ["issue_type_id"], name: "index_issues_on_issue_type_id", using: :btree
+  add_index "issues", ["issue_type_id"], name: "index_issues_on_issue_type_id"
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"
@@ -77,7 +74,4 @@ ActiveRecord::Schema.define(version: 20160321033752) do
     t.boolean  "authenticated"
   end
 
-  add_foreign_key "choices", "issues"
-  add_foreign_key "issue_links", "issues"
-  add_foreign_key "issues", "issue_types"
 end
