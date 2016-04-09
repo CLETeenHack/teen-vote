@@ -8,6 +8,9 @@ gem 'sqlite3', group: [:development, :test]
 # Use Postgres on the production server as the database for Active Record
 gem 'pg', group: :production
 
+gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
