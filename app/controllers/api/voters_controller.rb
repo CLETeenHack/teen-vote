@@ -11,9 +11,9 @@ class Api::VotersController < ApplicationController
   end
 
   def update_registration!
-    Voter
-      .find_by(registration_number: registration_number)
-      .update_attributes!(voter_params)
+    Voter.find_by(registration_number: registration_number).tap do |voter|
+      voter.update_attributes!(voter_params)
+    end
   end
 
   def school
@@ -25,9 +25,11 @@ class Api::VotersController < ApplicationController
   end
 
   def voter_params
-    school_id: school.id,
-    gender: params[:voter][:gender],
-    will_be_eighteen: params[:voter][:will_be_eighteen],
-    school_year: params[:voter][:year_in_school],
+    {
+      school_id: school.id,
+      gender: params[:voter][:gender],
+      will_be_eighteen: params[:voter][:will_be_eighteen],
+      school_year: params[:voter][:year_in_school],
+    }
   end
 end

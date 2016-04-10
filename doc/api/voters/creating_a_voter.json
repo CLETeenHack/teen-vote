@@ -3,13 +3,19 @@
   "http_method": "POST",
   "route": "/api/voters",
   "description": "Creating a Voter",
-  "explanation": "This creates an 'unauthenticated' voter. Use this when a student doesn't have a registration number",
+  "explanation": "If a valid registration number is provided, and 'authenticated Voter is created.  If registration number is not present, an 'unauthenticated' voter will be created.",
   "parameters": [
     {
       "required": true,
       "scope": "voter",
       "name": "school_id",
       "description": "Voter school"
+    },
+    {
+      "required": false,
+      "scope": "voter",
+      "name": "registration_number",
+      "description": "Voter registration number"
     },
     {
       "scope": "voter",
@@ -34,7 +40,7 @@
     {
       "request_method": "POST",
       "request_path": "/api/voters",
-      "request_body": "voter[school_id]=13&voter[gender]=f&voter[will_be_eighteen]=false&voter[school_year]=Sophmore",
+      "request_body": "voter[school_id]=23&voter[registration_number]=c6f7f439-6ba5-4c61-9b3a-6a9a694f0871&voter[gender]=f&voter[will_be_eighteen]=false&voter[school_year]=Sophmore",
       "request_headers": {
         "Accept": "application/json",
         "Host": "example.org",
@@ -46,16 +52,16 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"voter\": {\n    \"id\": 15,\n    \"created_at\": \"2016-04-10T16:49:23.869Z\",\n    \"updated_at\": \"2016-04-10T16:49:23.869Z\"\n  }\n}",
+      "response_body": "{\n  \"voter\": {\n    \"id\": 27,\n    \"created_at\": \"2016-04-10T17:49:32.450Z\",\n    \"updated_at\": \"2016-04-10T17:49:32.473Z\"\n  }\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
         "X-Content-Type-Options": "nosniff",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"67030a4115fe9b2028ce5544d85d77b4\"",
+        "ETag": "W/\"eebac816f898a317320284d927fc82ab\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "c2046add-d6fd-46f1-8b01-41f2d10ec36d",
-        "X-Runtime": "0.015923",
+        "X-Request-Id": "d0f05741-7d56-42bb-87fe-1739a6795f01",
+        "X-Runtime": "0.018049",
         "Content-Length": "99"
       },
       "response_content_type": "application/json; charset=utf-8",

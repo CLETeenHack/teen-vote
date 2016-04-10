@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321033752) do
+ActiveRecord::Schema.define(version: 20160410173840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20160321033752) do
     t.boolean  "will_be_eighteen"
     t.boolean  "authenticated"
   end
+
+  add_index "voters", ["registration_number"], name: "index_voters_on_registration_number", unique: true, using: :btree
 
   create_table "votes", force: :cascade do |t|
     t.integer  "voter_id"
