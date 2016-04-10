@@ -25,17 +25,17 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"schools\": [\n    {\n      \"id\": 122,\n      \"name\": \"ec3769fc-2891-49a1-8b14-c7c2a38a6053\",\n      \"created_at\": \"2016-03-21T06:05:10.637Z\",\n      \"updated_at\": \"2016-03-21T06:05:10.637Z\",\n      \"latitude\": null,\n      \"longitude\": null\n    }\n  ]\n}",
+      "response_body": "{\n  \"schools\": [\n    {\n      \"id\": 12,\n      \"name\": \"b0840c0f-90dd-45c6-8827-f972c1e5a50b\",\n      \"created_at\": \"2016-04-10T16:49:23.800Z\",\n      \"updated_at\": \"2016-04-10T16:49:23.800Z\",\n      \"latitude\": null,\n      \"longitude\": null\n    }\n  ]\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
         "X-Content-Type-Options": "nosniff",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"19031e21a070d837682b518658e0f602\"",
+        "ETag": "W/\"1051e392ef951ccc4632ba8f3a77e632\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "fe21766d-a7e1-4a54-8638-1f8a5a3d4603",
-        "X-Runtime": "0.016385",
-        "Content-Length": "183"
+        "X-Request-Id": "0035d8b8-60d5-4b99-969f-92f62e04d800",
+        "X-Runtime": "0.013909",
+        "Content-Length": "182"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

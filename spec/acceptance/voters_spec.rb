@@ -10,6 +10,7 @@ resource 'Voters' do
 
   post '/api/voters' do
     parameter :school_id, required: true, scope: :voter
+    parameter :registration_number, required: false, scope: :voter
     parameter :gender, scope: :voter
     parameter :will_be_eighteen, scope: :voter
     parameter :school_year, scope: :voter
@@ -18,14 +19,17 @@ resource 'Voters' do
     let(:gender) { 'f' }
     let(:will_be_eighteen) { false }
     let(:school_year) { 'Sophmore' }
+    let(:registration_number) { SecureRandom.uuid }
+    let(:voter) do
+      Voter.create! registration_number: registration_number
+    end
 
     example 'Creating a Voter' do
-      explanation "This creates an 'unauthenticated' voter. Use this when a student doesn't have a registration number"
+      explanation "If a valid registration number is provided, and 'authenticated Voter is created.  If registration number is not present, an 'unauthenticated' voter will be created."
       do_request
 
       expect(status).to eq 201
       data = JSON.parse(response_body, symbolize_names: true)
-      voter = Voter.last
       expect(data[:voter][:id]).to eq voter.id
     end
   end

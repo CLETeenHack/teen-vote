@@ -16,7 +16,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/api/votes?issue_id=168",
+      "request_path": "/api/votes?issue_id=14",
       "request_body": null,
       "request_headers": {
         "Accept": "application/json",
@@ -24,22 +24,22 @@
         "Cookie": ""
       },
       "request_query_parameters": {
-        "issue_id": "168"
+        "issue_id": "14"
       },
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"votes\": [\n    {\n      \"id\": 121,\n      \"choice_id\": 315,\n      \"created_at\": \"2016-03-21T06:05:10.782Z\",\n      \"updated_at\": \"2016-03-21T06:05:10.782Z\",\n      \"voter_id\": 129\n    }\n  ]\n}",
+      "response_body": "{\n  \"votes\": [\n    {\n      \"id\": 16,\n      \"choice_id\": 27,\n      \"created_at\": \"2016-04-10T16:49:23.945Z\",\n      \"updated_at\": \"2016-04-10T16:49:23.945Z\",\n      \"voter_id\": 16\n    }\n  ]\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
         "X-Content-Type-Options": "nosniff",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"6bd1edc57c1f809207143ead7e87bdc1\"",
+        "ETag": "W/\"b5eb45dfe964593ca6fba18af9a786c3\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "5c836080-a6c3-42d7-90ac-acb16ca9afb8",
-        "X-Runtime": "0.011290",
-        "Content-Length": "133"
+        "X-Request-Id": "813fa30a-d448-4e31-8565-fd583a944091",
+        "X-Runtime": "0.011416",
+        "Content-Length": "130"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
