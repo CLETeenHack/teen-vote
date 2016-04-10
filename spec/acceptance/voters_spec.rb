@@ -19,13 +19,13 @@ resource 'Voters' do
     let(:gender) { 'f' }
     let(:will_be_eighteen) { false }
     let(:school_year) { 'Sophmore' }
-    let(:registration_number) { SecureRandom.uuid }
+    let(:registration_number) { RegistrationNumber.next }
     let(:voter) do
       Voter.create! registration_number: registration_number
     end
 
     example 'Creating a Voter' do
-      explanation "If a valid registration number is provided, and 'authenticated Voter is created.  If registration number is not present, an 'unauthenticated' voter will be created."
+      explanation "If a valid registration number is provided, an 'authenticated Voter is created.  If registration number is not present, an 'unauthenticated' voter will be created."
       do_request
 
       expect(status).to eq 201

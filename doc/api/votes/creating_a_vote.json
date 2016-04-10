@@ -37,7 +37,7 @@
     {
       "request_method": "POST",
       "request_path": "/api/votes",
-      "request_body": "vote[choice_id]=49&vote[registration_number]=0520a281-a8cb-4e50-86c9-7c7ed0ed3b03",
+      "request_body": "vote[choice_id]=69&vote[registration_number]=1a406c1e-4c1c-4768-b09f-315b414b2e44",
       "request_headers": {
         "Accept": "application/json",
         "Host": "example.org",
@@ -49,16 +49,16 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"vote\": {\n    \"id\": 30,\n    \"choice_id\": 49,\n    \"created_at\": \"2016-04-10T17:49:32.536Z\",\n    \"updated_at\": \"2016-04-10T17:49:32.536Z\",\n    \"voter_id\": 29\n  }\n}",
+      "response_body": "{\n  \"vote\": {\n    \"id\": 42,\n    \"choice_id\": 69,\n    \"created_at\": \"2016-04-10T17:52:01.587Z\",\n    \"updated_at\": \"2016-04-10T17:52:01.587Z\",\n    \"voter_id\": 40\n  }\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
         "X-Content-Type-Options": "nosniff",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"a53f929dea51375d7f4fd5dca309b75f\"",
+        "ETag": "W/\"b45843323bc8999f750b3ff7ab463920\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "42a3362e-9569-48a6-b887-c7d6380ecbb7",
-        "X-Runtime": "0.006192",
+        "X-Request-Id": "aa678e02-fa0e-4681-a438-d50057718cd3",
+        "X-Runtime": "0.006743",
         "Content-Length": "127"
       },
       "response_content_type": "application/json; charset=utf-8",
