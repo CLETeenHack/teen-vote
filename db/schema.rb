@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321033752) do
+ActiveRecord::Schema.define(version: 20160411002743) do
 
   create_table "choices", force: :cascade do |t|
     t.integer  "issue_id"
@@ -73,5 +73,15 @@ ActiveRecord::Schema.define(version: 20160321033752) do
     t.boolean  "will_be_eighteen"
     t.boolean  "authenticated"
   end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "voter_id"
+    t.integer  "choice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "votes", ["choice_id"], name: "index_votes_on_choice_id"
+  add_index "votes", ["voter_id"], name: "index_votes_on_voter_id"
 
 end

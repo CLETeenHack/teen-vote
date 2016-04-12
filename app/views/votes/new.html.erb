@@ -1,0 +1,25 @@
+<%= form_tag votes_path do %>
+  <%= hidden_field_tag 'voter_id', @voter.id %>
+  <% @issues.each do |issue| %>
+    <%= fields_for "issue[]", issue do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>
+            <%= issue.title %>
+            <%= link_to issue_path(issue) do %>
+              <i class="fa fa-quesextion-circle"></i>
+            <% end %>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <% issue.choices.each do |choice| %>
+          <div class="col-md-3">
+            <strong><%= radio_button_tag "issue[#{issue.id}]", choice.id %> <%= choice.title %></strong>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% end %>
+  <%= submit_tag %>
+<% end %>
