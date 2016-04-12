@@ -7,11 +7,13 @@ class VotesController < ApplicationController
   end
   def create
     voter = Voter.find(params[:voter_id])
-    issues = Issue.where(id:params[:issue].keys)
-    choices = issues.map{|i|i.choices.where(id:params[:issue][i.id.to_s])}.flatten
-    binding.pry
-    choices.each do |choice|
-      Vote.create!(voter_id: voter.id, choice_id: choice.id)
+    voter.votes.destroy_all
+    if params[:issue]
+      issues = Issue.where(id:params[:issue].keys)
+      choices = issues.map{|i|i.choices.where(id:params[:issue][i.id.to_s])}.flatten
+      choices.each do |choice|
+        Vote.create!(voter_id: voter.id, choice_id: choice.id)
+      end
     end
   end
 

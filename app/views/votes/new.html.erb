@@ -1,3 +1,6 @@
+<h1>Votes#new</h1>
+<p>Find me in app/views/votes/new.html.erb</p>
+
 <%= form_tag votes_path do %>
   <%= hidden_field_tag 'voter_id', @voter.id %>
   <% @issues.each do |issue| %>
@@ -7,7 +10,7 @@
           <h2>
             <%= issue.title %>
             <%= link_to issue_path(issue) do %>
-              <i class="fa fa-quesextion-circle"></i>
+              <i class="fa fa-question-circle"></i>
             <% end %>
           </h2>
         </div>
@@ -20,6 +23,7 @@
         <% end %>
       </div>
     <% end %>
-    <% end %>
-  <%= submit_tag %>
+  <% end %>
+  <br/>
+  <%= submit_tag "Submit Vote", class: "btn btn-default" %>
 <% end %>
