@@ -1,6 +1,6 @@
-
-<h1>Issues#index</h1>
-<p>Find me in app/views/issues/index.html.erb</p>
+<h1 style="text-align: left"; color="blue">Issues</h1>
+<p>This is a list of all national and state issues and possible candidates. For more information, click on the link.</p>
+<p>When you are ready to vote, click the "Vote Now" link- But make sure you've registered first!</p>
 
 <% @issues.each do |issue| %>
 	<div class="row">
@@ -22,4 +22,4 @@
     </div>
 <% end %>
 <br/>
-<%= link_to "Ready to vote?", new_vote_path, class: "btn btn-default" %>
+<h1 style="text-align: left"><%= link_to "Vote Now", new_vote_path, class: "btn btn-default" %></h1>
