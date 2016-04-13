@@ -7,9 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="myTabHeader">
+		<ul id="tabs">
+			<li id="thisTab"><a href="this.html">This</a></li>
+			<li id="resourcesTab"><%= link_to 'Resources', resources_path %></li>
+			<li id="otherTab"><a href="theOther.html">The Other</a></li>
+			<li id="bananaTab"><a href="banana.html">Banana</a></li>
+		</ul>
+</div>
 <div class="container">
 	<%= yield %>
 </div>
-
 </body>
 </html>

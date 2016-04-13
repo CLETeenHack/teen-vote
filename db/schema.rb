@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 20160411002743) do
     t.boolean  "authenticated"
   end
 
+  add_index "voters", ["registration_number"], name: "index_voters_on_registration_number", unique: true
+
   create_table "votes", force: :cascade do |t|
     t.integer  "voter_id"
     t.integer  "choice_id"

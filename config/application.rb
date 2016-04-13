@@ -26,5 +26,7 @@ module TeenVote
     Rails.application.routes.default_url_options = {
       host: 'example.com',
     }
+
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
