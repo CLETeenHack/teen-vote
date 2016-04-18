@@ -25,17 +25,17 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"issues\": [\n    {\n      \"title\": \"Test Issue\",\n      \"description\": \"Lorem ipsum...\",\n      \"issue_type_id\": 143,\n      \"voting_open_time\": \"2016-03-26T06:05:10.376Z\",\n      \"voting_closed_time\": \"2016-03-27T06:05:10.377Z\",\n      \"ordinal\": 1,\n      \"created_at\": \"2016-03-21T06:05:10.389Z\",\n      \"updated_at\": \"2016-03-21T06:05:10.389Z\",\n      \"votes_url\": \"http://example.com/api/votes?issue_id=165\",\n      \"choices\": [\n        {\n          \"title\": \"Yes\",\n          \"created_at\": \"2016-03-21T06:05:10.469Z\",\n          \"updated_at\": \"2016-03-21T06:05:10.469Z\",\n          \"total_votes\": 1\n        },\n        {\n          \"title\": \"No\",\n          \"created_at\": \"2016-03-21T06:05:10.495Z\",\n          \"updated_at\": \"2016-03-21T06:05:10.495Z\",\n          \"total_votes\": 0\n        }\n      ],\n      \"issue_links\": [\n        {\n          \"id\": 78,\n          \"issue_id\": 165,\n          \"href\": \"http://www.example.com\",\n          \"title\": \"Test Link\",\n          \"image_url\": \"http://en.wikifur.com/w/images/f/f3/Troll.png\",\n          \"description\": \"Lorem Ipsum ...\",\n          \"created_at\": \"2016-03-21T06:05:10.562Z\",\n          \"updated_at\": \"2016-03-21T06:05:10.562Z\"\n        }\n      ]\n    }\n  ]\n}",
+      "response_body": "{\n  \"issues\": [\n    {\n      \"title\": \"Test Issue\",\n      \"description\": \"Lorem ipsum...\",\n      \"issue_type_id\": 31,\n      \"voting_open_time\": \"2016-04-15T17:52:01.195Z\",\n      \"voting_closed_time\": \"2016-04-16T17:52:01.195Z\",\n      \"ordinal\": 1,\n      \"created_at\": \"2016-04-10T17:52:01.207Z\",\n      \"updated_at\": \"2016-04-10T17:52:01.207Z\",\n      \"votes_url\": \"http://example.com/api/votes?issue_id=31\",\n      \"choices\": [\n        {\n          \"title\": \"Yes\",\n          \"created_at\": \"2016-04-10T17:52:01.234Z\",\n          \"updated_at\": \"2016-04-10T17:52:01.234Z\",\n          \"total_votes\": 1\n        },\n        {\n          \"title\": \"No\",\n          \"created_at\": \"2016-04-10T17:52:01.248Z\",\n          \"updated_at\": \"2016-04-10T17:52:01.248Z\",\n          \"total_votes\": 0\n        }\n      ],\n      \"issue_links\": [\n        {\n          \"id\": 31,\n          \"issue_id\": 31,\n          \"href\": \"http://www.example.com\",\n          \"title\": \"Test Link\",\n          \"image_url\": \"http://en.wikifur.com/w/images/f/f3/Troll.png\",\n          \"description\": \"Lorem Ipsum ...\",\n          \"created_at\": \"2016-04-10T17:52:01.313Z\",\n          \"updated_at\": \"2016-04-10T17:52:01.313Z\"\n        }\n      ]\n    }\n  ]\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
         "X-Content-Type-Options": "nosniff",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"af634e1029efc1a22e5557882020a18a\"",
+        "ETag": "W/\"b9c94642be3a31ddc7ba58121d6d6f37\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "7b7b67f4-7209-40bb-bb0e-f4439ebfb3f8",
-        "X-Runtime": "0.051607",
-        "Content-Length": "828"
+        "X-Request-Id": "6fa3dcfe-dfe9-4844-8809-4ac6f9d9fa2b",
+        "X-Runtime": "0.102155",
+        "Content-Length": "825"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
