@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411002743) do
+ActiveRecord::Schema.define(version: 20160418164736) do
 
   create_table "choices", force: :cascade do |t|
     t.integer  "issue_id"
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "image_url",  limit: 500
   end
 
   add_index "choices", ["issue_id"], name: "index_choices_on_issue_id"

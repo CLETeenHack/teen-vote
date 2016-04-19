@@ -35,7 +35,7 @@ Dir[File.join(Rails.root, 'db', 'data', 'issues','*')].each do |file_name|
       )
 
       issue_to_load[:choices].each do |choice_to_load|
-        issue.choices.find_or_create_by(title: choice_to_load[:title])
+        issue.choices.find_or_create_by(title: choice_to_load[:title], image_url: choice_to_load[:image_url])
       end
     end
   end
