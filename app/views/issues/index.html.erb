@@ -1,73 +1,54 @@
-<h1 style="text-align: left"; color="blue">Issues</h1>
+<h1 style="text-align: left" ; color="blue">Issues</h1>
 <p>This is a list of all national and state issues and possible candidates. For more information, click on the link.</p>
 <p>When you are ready to vote, click the "Vote Now" link- But make sure you've registered first!</p>
 <style>
-  /* http://stackoverflow.com/questions/35566603/make-font-awesome-icon-size-increase-on-mouseover */
-  .choice {
-  	width:'40px';
-  }
-  
-  .fa-question-circle {  
+	/* http://stackoverflow.com/questions/35566603/make-font-awesome-icon-size-increase-on-mouseover */
+	
+	.choice {
+		width: '40px';
+	}
+	
+    .fa-question-circle:hover {
+      -webkit-transform: scale(1.2);
+    }
+    .fa-question-circle {  
       transition: font-size 0.35s ease; 
-  }
-  .fa-question-circle:hover {  
-     -webkit-transform: scale(1.2);
-			display:inline;
-
-  }
-  a {
-      background-color: none;
-  }
-
-/* .fa-question-circle {
-    border-radius: 5px;
-    padding: 10px;
-    width: 42px;
-    background: #fff;
-    color: #3f729b;
-    block: inline;
-}
-
-/*#fa-question-circle i:hover {
-    background:black;
-    color: white;
-}*/
-/*.fa-question-circle: hover {background: #fcc;
-padding: 1em;
-text-align: center;
-display: inline;
-border-radius: 50%;
-color:black;
-}/*
+    }
+	
+	a:hover {
+		color: #000;
+		background-color: #fff;
+		text-decoration: none;
+	}
 </style>
 <script>
 	/* javascript & jquery goes in a script block, you can keep it here */
 	$('.multiple-items').slick({
-	    infinite: true;
-	    slidesToShow: 3;
-	    slidesToScroll: 3;
-	    
+		infinite: true;
+		slidesToShow: 3;
+		slidesToScroll: 3;
+
 	})
 </script>
 <% @issues.each do |issue| %>
 	<div class="row">
 		<div class="col-md-12">
-		    <h2>
+			<h2>
 		      <%= issue.title %>
 		      <%= link_to issue_path(issue) do %>
 		      	<i class="fa fa-question-circle"></i>
 		      <% end %>
 		    </h2>
-	    </div>
-    </div>
+		</div>
+	</div>
 	<div class="row">
 		<% issue.choices.each do |choice| %>
 			<div class="col-md-3 choice">
-				<%= choice.image_url %>
-				<%= choice.title %>
-          	</div>
-		<% end %>
-   	</div>
-<% end %>
-<h1 style="text-align: left";><%= link_to "Vote Now", new_vote_path, class: "btn btn-default"%></h1>
-<br/>
+				<%=choice.image_url %>
+					<%=choice.title %>
+			</div>
+			<% end %>
+	</div>
+	<% end %>
+		<h1 style="text-align: left" ;><%= link_to "Vote Now", new_vote_path, class: "btn btn-default"%></h1>
+		<br/>
