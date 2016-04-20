@@ -8,11 +8,18 @@
 </head>
 <body>
 <div id="myTabHeader">
-		<ul id="tabs">
-			<li id="thisTab"><a href="this.html">This</a></li>
+	Find me in app/views/layouts/application.html.erb
+		<ul >
+			<li id="homeTab"><%= link_to 'Home', root_path %></li>
+			<li id="issuesTab"><%= link_to 'Issues', issues_path %></li>
 			<li id="resourcesTab"><%= link_to 'Resources', resources_path %></li>
-			<li id="otherTab"><a href="theOther.html">The Other</a></li>
-			<li id="bananaTab"><a href="banana.html">Banana</a></li>
+			<li id="voteTab"><a href="vote.html">Vote</a></li>
+			<li id="registerTab"><a href="register.html">Register</a></li>
+			<li id="ballotTab"><a href="ballot.html">Ballot</a></li>
+			<li id="aboutustab"><a href="Aboutus.html">About Us</a></li>
+			<li id="contactustab"><a href="contactus.html">Contact us</a></li>
+			<li id="resultstab"><a href="results.html">Results</a></li>
+			<li id="ivotedtab"><a href="Ivoted.html">I Voted</a></li>
 		</ul>
 </div>
 <%= yield %>
