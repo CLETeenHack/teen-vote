@@ -38,22 +38,22 @@
 		color: #ffcc66;
     }
 	
-	/*#myTabHeader a:hover {
+	/#myTabHeader a:hover {
 		color: #ffaa33;
 		border-color: #ffaa33;
 	}
 	
-	*/#myTabHeader #selected a { /* used with the javascript */
+	#myTabHeader #selected a { /* used with the javascript */
 		color: #ff8800;
 		border-color: #ff8800; 
 	}
 	
-	/*#myTabHeader #selected a:hover {
+	#myTabHeader #selected a:hover {
 		color: green;
 		border-color: green;
 	}
 	
-	*/#content {
+	#content {
 		clear: both;
 		/*color: white;*/
 		padding: 1em;
