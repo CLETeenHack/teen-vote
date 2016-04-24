@@ -1,0 +1,15 @@
+<h1>Vote</h1>
+<p>Find me in app/views/votes/index.html.erb</p>
+
+<!--Beaumont team to put their vote code here, then send users to thanks_for_voting.html.erb 
+with a string stating if vote was recorded or not. ***Please let Mel / WestShore know how you are passing. Query string?
+If query string, then what is the name of the param?-->
+
+<!--Mel just threw this in as an example-->
+<ul>
+<% @issues.each do |issue| %>
+  <li>
+    <%= link_to issue.title, issue %>
+  </li>
+<% end %>
+</ul>
