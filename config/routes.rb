@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'resources' => 'home#resources'
   
   resources :votes, only: [:index]  
-  get 'votes/reports' => 'votes#reports'
+  get 'votes/results' => 'votes#results'
   get 'votes/thanks_for_voting' => 'votes#thanks_for_voting'
   
   namespace :admin do

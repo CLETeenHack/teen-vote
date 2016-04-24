@@ -8,7 +8,7 @@ class VotesController < ApplicationController
     @issues = Issue.all
   end
   
-  def reports
+  def results
       
     @issues = Issue.all
   end
