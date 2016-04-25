@@ -3,11 +3,11 @@
 <script>
 $(function() {
   var colorMappings = {};
-  colorMappings["Shaw High School"] = "FF000";
-  colorMappings["Jane Addams High School"] = "761817";
-  colorMappings["Beaumont High School"] = "1532ED";
-  colorMappings["John Marshall High School"] = "FFFFFF";
-  colorMappings["Westshore High School"] = "7B0D8C";
+  colorMappings["Shaw High School"] = "#FF000";
+  colorMappings["Jane Addams High School"] = "#761817";
+  colorMappings["Beaumont High School"] = "#1532ED";
+  colorMappings["John Marshall High School"] = "#FFFFFF";
+  colorMappings["Westshore High School"] = "#7B0D8C";
  
   $('#voter_school_id').change(function() {  
     var school = $('#voter_school_id option:selected').text();
@@ -18,7 +18,7 @@ $(function() {
   <div>
       <h2 class="name">High School Name</h2>
       <select id="voter_school_id">
-      <%= f.select :school_id, options_for_select([['Shaw High School', 'Shaw High School'],['Beaumont High School','Beaumont High School']['Jane Addams High School','Jane Addams High School'],['John Marshall High School', 'John Marshall High School'],['Westshore High School','Westshore High School']]) %>
+      <%= f.select :school_id, options_for_select(@schools) %>
       </select>
   </div>
   <div>
