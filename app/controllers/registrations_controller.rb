@@ -13,10 +13,11 @@ class RegistrationsController < ApplicationController
     
     # 2. Implement the 'unauthenticated voter' scenario - where the voter needs to be created without a registration number
     if registration_number.blank?
-      voter = Voter.create!(voter_params)
+      voter = Voter.create!(voter_params.merge(registration_number: RegistrationNumber.next))
     else
       # 3. Implement the 'authorized voter' scenario - where the voter has a valid registration number.
-      voter = Voter.find_by(registration_number: registration_number, school_id: voter_params[:school_id]).update_attributes!(voter_params)
+      voter = Voter.find_by(registration_number: registration_number, school_id: voter_params[:school_id])
+      voter.update_attributes!(voter_params)
     end
   
     # 4. Store the registered user in 'session' (we can discuss what session is)  
