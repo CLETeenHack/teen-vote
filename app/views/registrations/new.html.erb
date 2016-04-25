@@ -1,20 +1,15 @@
-<p>Temporary placeholder for final registration form.</p>
-
+<h1>Registration</h1>
 <%= form_for @voter, url: url_for(controller: 'registrations', action: 'create') do |f| %>
   <div>
-      <label>School</label>
+      <h2 class="name">High School Name</h2>
       <%= f.select :school_id, options_for_select(@schools) %>
   </div>
   <div>
-      <label>Gender</label>
-      <%= f.select :gender, options_for_select([['Male', 'Male'], ['Female', 'Female']]) %>
+      <h2> Gender</h2> 
+      <%= f.select :gender, options_for_select([['Male', 'Male'], ['Female', 'Female'], ['Other', 'Other']]) %>
   </div>
   <div>
-      <label>Gender</label>
-      <%= f.select :gender, options_for_select([['Male', 'Male'], ['Female', 'Female']]) %>
-  </div>
-  <div>
-      <label>School Year</label>
+      <h2>Year in High School</h2>
       <%= f.select :school_year, options_for_select([['Freshman', 'Freshman'], ['Sophmore', 'Sophmore'], ['Junior', 'Junior'], ['Senior', 'Senior']]) %>
   </div>
   <div>
@@ -22,7 +17,7 @@
       <%= f.text_field :registration_number %>
   </div>
   <div>
-      <label>Will you be eighteen by election day?</label>
+      <h2 id="age">18 by November</h2>
       <%= f.check_box :will_be_eighteen %>
   </div>
   <div>
