@@ -1,8 +1,24 @@
+
 <h1>Registration</h1>
 <%= form_for @voter, url: url_for(controller: 'registrations', action: 'create') do |f| %>
+ <script>
+            function Color(value, dark){ 
+    document.body.style.backgroundColor = '#' + value; 
+    if (dark) {
+        document.body.style.color = '#FFFFFF'; }
+        }
+        </script>
+        
   <div>
-      <h2 class="name">High School Name</h2>
-      <%= f.select :school_id, options_for_select(@schools) %>
+   <h2 class="name">High School Name</h2>
+      <select name="highschool" onChange="Color(this.value)"> 
+        <option value = FFFFFF> Please Select a High School</option>
+        <option value="FF0000">Shaw High School </option>
+      	<option value="761817">Jane Addams High School</option>
+      	<option value="FFFFFF">John Marshall High School</option>
+      	<option value="7B0D8C">Westshore High School</option>
+      	<option value="1532ED">Beaumont High School</option>
+    </select>
   </div>
   <div>
       <h2> Gender</h2> 
