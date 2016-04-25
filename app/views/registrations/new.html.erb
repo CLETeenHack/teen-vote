@@ -1,24 +1,25 @@
-
 <h1>Registration</h1>
 <%= form_for @voter, url: url_for(controller: 'registrations', action: 'create') do |f| %>
- <script>
-            function Color(value, dark){ 
-    document.body.style.backgroundColor = '#' + value; 
-    if (dark) {
-        document.body.style.color = '#FFFFFF'; }
-        }
-        </script>
-        
+<script>
+$(function() {
+  var colorMappings = {};
+  colorMappings["Shaw High School"] = "FF000";
+  colorMappings["Jane Addams High School"] = "761817";
+  colorMappings["Beaumont High School"] = "1532ED";
+  colorMappings["John Marshall High School"] = "FFFFFF";
+  colorMappings["Westshore High School"] = "7B0D8C";
+ 
+  $('#voter_school_id').change(function() {  
+    var school = $('#voter_school_id option:selected').text();
+    document.body.style.backgroundcolor = colorMappings[school];
+  });
+});
+</script>
   <div>
-   <h2 class="name">High School Name</h2>
-      <select name="highschool" onChange="Color(this.value)"> 
-        <option value = FFFFFF> Please Select a High School</option>
-        <option value="FF0000">Shaw High School </option>
-      	<option value="761817">Jane Addams High School</option>
-      	<option value="FFFFFF">John Marshall High School</option>
-      	<option value="7B0D8C">Westshore High School</option>
-      	<option value="1532ED">Beaumont High School</option>
-    </select>
+      <h2 class="name">High School Name</h2>
+      <select id="voter_school_id">
+      <%= f.select :school_id, options_for_select([['Shaw High School', 'Shaw High School'],['Beaumont High School','Beaumont High School']['Jane Addams High School','Jane Addams High School'],['John Marshall High School', 'John Marshall High School'],['Westshore High School','Westshore High School']]) %>
+      </select>
   </div>
   <div>
       <h2> Gender</h2> 
