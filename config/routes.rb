@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :issues, only: [:show, :index]
   resources :votes, only: [:new, :create]
   root 'home#index'
+  resources :registrations
   get 'resources' => 'home#resources'
   
   namespace :admin do

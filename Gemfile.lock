@@ -20,6 +20,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_link_to (1.0.3)
+      actionpack
     active_model_serializers (0.9.3)
       activemodel (>= 3.2)
     activejob (4.2.5)
@@ -216,6 +218,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_link_to
   active_model_serializers
   apitome
   font-awesome-rails
