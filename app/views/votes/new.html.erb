@@ -1,7 +1,37 @@
 <h1>Votes#new</h1>
 <p>Find me in app/views/votes/new.html.erb</p>
+<style>
+.fa-question-circle:hover {
+	-webkit-transform: scale(1.2);
+}
 
-<%= form_tag votes_path do %>
+.fa-question-circle {  
+  transition: font-size 0.35s ease; 
+}
+
+a:hover {
+	color: #000;
+	background-color: #fff;
+	text-decoration: none;
+}
+</style>
+
+<script>
+function confirmVote() {
+  console.log(gatherVotes());
+  return confirm('Are you sure you want to vote for: ') ;
+}
+
+function gatherVotes() {
+  var message = "Votes are for ";
+  $.each($('input:radio:checked'), function( index, value ) {
+    message = message + $(value).parent().text().trim() + ", ";
+  });
+  return message;
+}
+</script>
+
+<%= form_tag votes_path, onsubmit: "return confirmVote();" do %>
   <%= hidden_field_tag 'voter_id', @voter.id %>
   <% @issues.each do |issue| %>
     <%= fields_for "issue[]", issue do |f| %>
@@ -18,7 +48,10 @@
       <div class="row">
         <% issue.choices.each do |choice| %>
           <div class="col-md-3">
-            <strong><%= radio_button_tag "issue[#{issue.id}]", choice.id %> <%= choice.title %></strong>
+            <strong>
+              <%= radio_button_tag "issue[#{issue.id}]", choice.id %> 
+              <%= choice.title %>
+            </strong>
           </div>
         <% end %>
       </div>
