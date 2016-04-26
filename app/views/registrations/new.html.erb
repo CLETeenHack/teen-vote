@@ -1,0 +1,43 @@
+<h1>Registration</h1>
+<%= form_for @voter, url: url_for(controller: 'registrations', action: 'create') do |f| %>
+<script>
+$(function() {
+  var colorMappings = {};
+  colorMappings["Shaw High School"] = "#FF000";
+  colorMappings["Jane Addams High School"] = "#761817";
+  colorMappings["Beaumont High School"] = "#1532ED";
+  colorMappings["John Marshall High School"] = "#FFFFFF";
+  colorMappings["Westshore High School"] = "#7B0D8C";
+ 
+  $('#voter_school_id').change(function() {  
+    var school = $('#voter_school_id option:selected').text();
+    document.body.style.backgroundcolor = colorMappings[school];
+  });
+});
+</script>
+  <div>
+      <h2 class="name">High School Name</h2>
+      <select id="voter_school_id">
+      <%= f.select :school_id, options_for_select(@schools) %>
+      </select>
+  </div>
+  <div>
+      <h2> Gender</h2> 
+      <%= f.select :gender, options_for_select([['Male', 'Male'], ['Female', 'Female'], ['Other', 'Other']]) %>
+  </div>
+  <div>
+      <h2>Year in High School</h2>
+      <%= f.select :school_year, options_for_select([['Freshman', 'Freshman'], ['Sophmore', 'Sophmore'], ['Junior', 'Junior'], ['Senior', 'Senior']]) %>
+  </div>
+  <div>
+      <label>Registration Number</label>
+      <%= f.text_field :registration_number %>
+  </div>
+  <div>
+      <h2 id="age">18 by November</h2>
+      <%= f.check_box :will_be_eighteen %>
+  </div>
+  <div>
+      <%= f.submit 'Submit' %>
+  </div>
+<% end %>
