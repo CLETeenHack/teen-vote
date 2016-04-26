@@ -1,2 +1,46 @@
-<h1>Thanks for registering!</h1>
-<p>Your registration number is <strong><%= @voter['registration_number'] %></strong></p>
+<div id="loader"></div>
+
+<div style="display:none;" id="Text" class="animate-bottom">
+  <h1>Thanks for registering!</h1>
+  <p>Your registration number is <strong><%= @voter['registration_number'] %></strong></p>
+  <p>You can now <a href="/vote">go vote</a> or <a href="/issues">look at the issues.</a></p>
+</div>
+
+
+<script>
+  $(function() {
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("Text").style.display = "block";
+    }
+    setTimeout(showPage, 3000);
+  });
+</script>
+<style>
+  #loader {
+    border: 16px solid black;
+    border-radius: 50%;
+    border-top: 16px solid red;
+    border-right: 16px solid black;
+    border-bottom: 16px solid red;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+</style>
