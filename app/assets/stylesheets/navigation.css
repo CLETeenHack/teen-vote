@@ -32,24 +32,25 @@
 		width: 6em;
 		padding: 0 0.5em;
 		font-weight: bold;
-		color: black;
-		border-bottom: 0.5em solid #ffcc66;  
-		color: #ffcc66;
+		border-bottom: 0.5em solid blue; 
+		color: blue;
     }
 	
 	#myTabHeader a:hover {
-		color: #ffaa33;
-		border-color: #ffaa33;
+		background: white;
+		color: red;
+		border-color: red;
 	}
 	
 	#myTabHeader #selected a { 
-		color: #ff8800;
-		border-color: #ff8800; 
+		color: red;
+		border-color: red; 
 	}
 	
 	#myTabHeader #selected a:hover {
-		color: green;
-		border-color: green;
+		background: white;
+		color: red;
+		border-color: red;
 	}
 	
 	#content {
@@ -64,7 +65,7 @@
 	h1 {
 		margin: 0;
 		padding: 0.5em 0 1em 0.5em;
-		color: #ff8800;
+		color: blue;
 		font-size: 1.5em;
 		font-style: italic;
 	}
