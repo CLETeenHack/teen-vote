@@ -209,7 +209,6 @@ DEPENDENCIES
   active_model_serializers
   apitome
   font-awesome-rails
-  jquery-rails
   pg
   pry-rails
   rails (= 4.2.5)
