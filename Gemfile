@@ -8,7 +8,9 @@ gem 'sqlite3', group: [:development, :test]
 # Use Postgres on the production server as the database for Active Record
 gem 'pg', group: :production
 
-gem "twitter-bootstrap-rails"
+#commenting out bootstrap. Mel has custom stylesheet and this appears to interfere.
+#gem "twitter-bootstrap-rails"
+
 gem "font-awesome-rails"
 
 # Use SCSS for stylesheets
@@ -19,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+#gem 'jquery-rails'
 # Admin interface
 gem 'rails_admin'
 # Auto-generate api docs from specs
