@@ -10,9 +10,11 @@
     <link rel="icon" href="../assets/images/favicon.ico">
 
     <title>CLE Teen Vote</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
+  	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css"/>
+    <%= csrf_meta_tags %>
 
 
     <link href='https://fonts.googleapis.com/css?family=Calligraffitti|Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
@@ -44,19 +46,23 @@
                 <%= active_link_to 'Issues', '/issues', :wrap_tag => :li %>
                 <%= active_link_to 'Vote', '/votes', :active => :exclusive, :wrap_tag => :li %>
                 <%= active_link_to 'Results', '/votes/results', :wrap_tag => :li %>
+                <%= active_link_to 'Register', '/registrations/new', :wrap_tag => :li %>
+                <%= active_link_to 'Sample Ballot', '/ballots', :wrap_tag => :li %>
+                <%= active_link_to 'Vote', '/votes/new', :wrap_tag => :li %>
+                <%= active_link_to 'Results', '/results', :wrap_tag => :li %>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">About CLETeenHack</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="http://cleteenhack.com/about-us/" target="_blank">About CLETeenHack</a></li>
                     </ul>
                 </li>
                 <%= active_link_to 'Contact', '/contact', :wrap_tag => :li %>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li style="padding: 8px"><button class="btn btn-danger btn-lg" >Vote Now!</button></li>
+                <li style="padding: 8px"><button class="btn btn-danger btn-lg" onclick="location.href='/votes/new'" >Vote Now!</button></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -81,6 +87,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
 
 </body>
 </html>

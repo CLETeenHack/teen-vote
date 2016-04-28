@@ -1,30 +1,45 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
-school = School.find_or_create_by(name: 'Test School')
-state_issue = IssueType.find_or_create_by(title: 'State Issues', state: true)
-national_issue = IssueType.find_or_create_by(title: 'National Issues', national: true)
+School.find_or_create_by(name: 'Test School')
 
 voter = Voter.find_or_create_by(
-  registration_number: 'test-number',
+  registration_number: 'ABC1234',
   gender: 'f',
   school_year: 'Senior',
 )
 
-issue = Issue.find_or_create_by(
-  title: 'Supreme Chancellor',
-  description: 'Cast your vote for the supreme Chancellor',
-  issue_type_id: national_issue.id,
-  voting_open_time: DateTime.now.end_of_month - 1,
-  voting_closed_time: DateTime.now.end_of_month,
+voter = Voter.find_or_create_by(
+  registration_number: 'ZYX9876',
+  gender: 'm',
+  school_year: 'Junior',
 )
 
-palpatine = issue.choices.find_or_create_by(title: 'Palpatine')
-valorum = issue.choices.find_or_create_by(title: 'Valorum')
+Dir[File.join(Rails.root, 'db', 'data', 'issues','*')].each do |file_name|
+  issues = YAML.load_file file_name
+  issues.each do |type_of_issue|
+    type_of_issue.deep_symbolize_keys!
 
-palpatine.votes.find_or_create_by(voter_id: voter.id)
+    issue_type = IssueType.find_or_create_by(
+      title: type_of_issue[:title],
+      national: type_of_issue[:national],
+      state: type_of_issue[:state])
+
+    type_of_issue[:issues].each do |issue_to_load|
+      issue = Issue.find_or_create_by(
+        title: issue_to_load[:title],
+        description: issue_to_load[:description],
+        issue_type_id: issue_type.id,
+        voting_open_time: DateTime.now.end_of_month - 1,
+        voting_closed_time: DateTime.now.end_of_month,
+      )
+
+      issue_to_load[:choices].each do |choice_to_load|
+        issue.choices.find_or_create_by(
+          title: choice_to_load[:title], 
+          image_url: choice_to_load[:image_url],
+          party: choice_to_load[:party])
+      end
+    end
+  end
+end
