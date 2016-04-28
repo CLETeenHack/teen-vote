@@ -1,0 +1,16 @@
+<h1 style="text-align: left">Issues</h1>
+<h2><%= @issue.title %></h2>
+<p><%= @issue.description %></p>
+<h3>Choices</h3>
+<ul>
+  <% @issue.choices.each do |choice| %>
+    <li>
+      <%= choice.title %>
+      <ul>
+        <li>
+          Party:<%= choice.party %>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>

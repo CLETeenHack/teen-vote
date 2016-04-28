@@ -11,19 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410173840) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20160427194522) do
 
   create_table "choices", force: :cascade do |t|
     t.integer  "issue_id"
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "image_url",  limit: 500
+    t.string   "party",      limit: 30
   end
 
-  add_index "choices", ["issue_id"], name: "index_choices_on_issue_id", using: :btree
+  add_index "choices", ["issue_id"], name: "index_choices_on_issue_id"
 
   create_table "issue_links", force: :cascade do |t|
     t.integer  "issue_id"
@@ -35,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160410173840) do
     t.datetime "updated_at",              null: false
   end
 
-  add_index "issue_links", ["issue_id"], name: "index_issue_links_on_issue_id", using: :btree
+  add_index "issue_links", ["issue_id"], name: "index_issue_links_on_issue_id"
 
   create_table "issue_types", force: :cascade do |t|
     t.string   "title"
@@ -56,7 +55,7 @@ ActiveRecord::Schema.define(version: 20160410173840) do
     t.integer  "ordinal"
   end
 
-  add_index "issues", ["issue_type_id"], name: "index_issues_on_issue_type_id", using: :btree
+  add_index "issues", ["issue_type_id"], name: "index_issues_on_issue_type_id"
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"
@@ -77,19 +76,19 @@ ActiveRecord::Schema.define(version: 20160410173840) do
     t.boolean  "authenticated"
   end
 
-  add_index "voters", ["registration_number"], name: "index_voters_on_registration_number", unique: true, using: :btree
+  add_index "voters", ["registration_number"], name: "index_voters_on_registration_number", unique: true
 
   create_table "votes", force: :cascade do |t|
     t.integer  "voter_id"
     t.integer  "choice_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
     t.boolean  "understand_this"
     t.boolean  "care_about_this"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "votes", ["choice_id"], name: "index_votes_on_choice_id", using: :btree
-  add_index "votes", ["voter_id"], name: "index_votes_on_voter_id", using: :btree
+  add_index "votes", ["choice_id"], name: "index_votes_on_choice_id"
+  add_index "votes", ["voter_id"], name: "index_votes_on_voter_id"
 
   add_foreign_key "choices", "issues"
   add_foreign_key "issue_links", "issues"

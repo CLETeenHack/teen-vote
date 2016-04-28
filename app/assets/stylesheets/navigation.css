@@ -4,13 +4,13 @@
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	#myTabHeader {
 		background-color:pink;
-		
-		
+
+
 	}
-	
+
     #myTabHeader ul {
 		list-style: none;
 		padding: 0;
@@ -19,12 +19,12 @@
 		float: left;
 		width: 100%;
     }
-    
+
 	#myTabHeader li {
 		float: left;
 		margin: 0 1em 0 0;
     }
-    
+
 	#myTabHeader a {
 		font: 1.6em arial, helvetica, sans-serif;
 		text-decoration: none;
@@ -32,36 +32,36 @@
 		width: 6em;
 		padding: 0 0.5em;
 		font-weight: bold;
-		border-bottom: 0.5em solid blue; 
+		border-bottom: 0.5em solid blue;
 		color: blue;
     }
-	
+
 	#myTabHeader a:hover {
 		background: white;
 		color: red;
 		border-color: red;
 	}
-	
-	#myTabHeader #selected a { 
+
+	#myTabHeader #selected a {
 		color: red;
-		border-color: red; 
+		border-color: red;
 	}
-	
+
 	#myTabHeader #selected a:hover {
 		background: white;
 		color: red;
 		border-color: red;
 	}
-	
+
 	#content {
 		clear: both;
 		padding: 1em;
 	}
-	
+
 	#content p {
 		margin: 0 0 1em 0;
 	}
-	
+
 	h1 {
 		margin: 0;
 		padding: 0.5em 0 1em 0.5em;

@@ -1,4 +1,4 @@
-class IssuesController < ApplicationController
+class BallotsController < ApplicationController
   def index
     @issues = Issue.all
     @national_issues = Issue.joins(:issue_type)
