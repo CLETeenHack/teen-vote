@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(version: 20160427194522) do
   create_table "votes", force: :cascade do |t|
     t.integer  "voter_id"
     t.integer  "choice_id"
+    t.boolean  "understand_this"
+    t.boolean  "care_about_this"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,4 +90,9 @@ ActiveRecord::Schema.define(version: 20160427194522) do
   add_index "votes", ["choice_id"], name: "index_votes_on_choice_id"
   add_index "votes", ["voter_id"], name: "index_votes_on_voter_id"
 
+  add_foreign_key "choices", "issues"
+  add_foreign_key "issue_links", "issues"
+  add_foreign_key "issues", "issue_types"
+  add_foreign_key "votes", "choices"
+  add_foreign_key "votes", "voters"
 end
