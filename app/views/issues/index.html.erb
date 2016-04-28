@@ -1,87 +1,10 @@
-<h1 style="text-align: left" ; color="blue">Issues</h1>
-<p>This is a list of all national and state issues and possible candidates. For more information, click on the link.</p>
-<p>When you are ready to vote, click the "Vote Now" link- But make sure you've registered first!</p>
-<style>
-.img {
-	width: '40px';
-	border-style: none;
-	height: '200px';
-}
+<h1>Issues#index</h1>
+<p>Find me in app/views/issues/index.html.erb</p>
 
-.fa-question-circle:hover {
-	-webkit-transform: scale(1.2);
-}
-
-.choice:hover {
-	-webkit-transform: scale(1.05);
-}
-
-.fa-question-circle {  
-	transition: font-size 0.35s ease; 
-}
-
-.slick-prev:before, .slick-next:before{
-    color:#333;
-}
-</style>
-<script>
-$(function() {
-	/* javascript & jquery goes in a script block, you can keep it here */
-	$('.choice-list').slick({
-  		dots: true,
-  		infinite: true,
-  		speed: 300,
- 		slidesToShow: 4,
-  		slidesToScroll: 4,
-  		responsive: [
-		    {
-			    breakpoint: 1024,
-			    settings: {
-				    slidesToShow: 3,
-				    slidesToScroll: 3,
-				    infinite: true,
-				    dots: true
-		      }
-		    },
-		    {
-		      	breakpoint: 600,
-		      	settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 2
-			      }
-		    },
-		    {
-	      	breakpoint: 480,
-	      	settings: {
-		        slidesToShow: 1,
-		        slidesToScroll: 1
-		      }
-		    }
-		  ]
-		});
-	});
-</script>
+<ul>
 <% @issues.each do |issue| %>
-	<div class="row">
-		<div class="col-md-12">
-			<h2>
-		      <%= issue.title %>
-		      <%= link_to issue_path(issue) do %>
-		      	<i class="fa fa-question-circle"></i>
-		      <% end %>
-		    </h2>
-		</div>
-	</div>
-	<div class="choice-list">
-		<% issue.choices.each do |choice| %>
-			<div class="choice">
-				<%= image_tag(choice.image_url, width: '100px', alt: choice.title) %>
-				<br/>
-				<%= choice.title %>
-			</div>
-		<% end %>
-	</div>
-
+  <li>
+    <%= link_to issue.title, issue %>
+  </li>
 <% end %>
-<h1 style="text-align: left" ;><%= link_to "Vote Now", new_vote_path, class: "btn btn-default"%></h1>
-<br/>
+</ul>

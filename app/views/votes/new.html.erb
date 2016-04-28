@@ -62,9 +62,9 @@ function gatherVotes() {
         </div>
       </div>
       <br>
-      <%= check_box :issue, :understand_this %> I understand
+      <%= check_box 'understand_this', issue.id %> I understand
       <br>
-      <%= check_box :issue, :care_about_this %> I care about this
+      <%= check_box 'care_about_this', issue.id %> I care about this
   <% end %>
   <br/>
   <%= submit_tag "Submit Vote", class: "btn btn-default" %>
