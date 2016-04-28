@@ -41,5 +41,17 @@ class VotesController < ApplicationController
 
   def care_about_this_params
     params.require(:care_about_this)
+  def index
+    @issues = Issue.all
+  end
+  
+  def thanks_for_voting
+      
+    @issues = Issue.all
+  end
+  
+  def results
+      
+    @issues = Issue.all
   end
 end
