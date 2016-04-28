@@ -18,14 +18,13 @@ a:hover {
 
 <script>
 function confirmVote() {
-  console.log(gatherVotes());
-  return confirm('Are you sure you want to vote for: ') ;
+  return confirm('Are you sure you want to vote for:\n' + gatherVotes()) ;
 }
 
 function gatherVotes() {
-  var message = "Votes are for ";
+  var message = "";
   $.each($('input:radio:checked'), function( index, value ) {
-    message = message + $(value).parent().text().trim() + ", ";
+    message = message + $(value).parent().text().trim() + "\n ";
   });
   return message;
 }
@@ -45,6 +44,7 @@ function gatherVotes() {
           </h2>
         </div>
       </div>
+    <% end %>
       <div class="row">
         <% issue.choices.each do |choice| %>
           <div class="col-md-3">
@@ -54,8 +54,17 @@ function gatherVotes() {
             </strong>
           </div>
         <% end %>
+        <div class="col-md-3">
+          <strong>
+            <%= radio_button_tag "issue[#{issue.id}]", '' %> 
+            None
+          </strong>
+        </div>
       </div>
-    <% end %>
+      <br>
+      <%= check_box :issue, :understand_this %> I understand
+      <br>
+      <%= check_box :issue, :care_about_this %> I care about this
   <% end %>
   <br/>
   <%= submit_tag "Submit Vote", class: "btn btn-default" %>

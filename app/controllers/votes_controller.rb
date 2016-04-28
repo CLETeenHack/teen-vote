@@ -4,6 +4,12 @@ class VotesController < ApplicationController
     #TODO: after registration system is in place, use the active voter instead of just the first one
     @voter = Voter.first
     @issues = Issue.all
+    @national_issues = Issue.joins(:issue_type)
+                            .where(issue_types: {national: true})
+                            .all
+    @state_issues = Issue.joins(:issue_type)
+                         .where(issue_types: {state: true})
+                         .all
   end
   def create
     voter = Voter.find(params[:voter_id])

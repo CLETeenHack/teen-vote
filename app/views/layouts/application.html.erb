@@ -45,7 +45,7 @@
                 <%= active_link_to 'Resources', '/resources', :wrap_tag => :li %>
                 <%= active_link_to 'Issues', '/issues', :wrap_tag => :li %>
                 <%= active_link_to 'Register', '/registrations/new', :wrap_tag => :li %>
-                <%= active_link_to 'Vote', '/vote', :wrap_tag => :li %>
+                <%= active_link_to 'Vote', '/votes/new', :wrap_tag => :li %>
                 <%= active_link_to 'Results', '/results', :wrap_tag => :li %>
 
                 <li class="dropdown">
@@ -59,7 +59,7 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li style="padding: 8px"><button class="btn btn-danger btn-lg" onclick="location.href='/vote'" >Vote Now!</button></li>
+                <li style="padding: 8px"><button class="btn btn-danger btn-lg" onclick="location.href='/votes/new'" >Vote Now!</button></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

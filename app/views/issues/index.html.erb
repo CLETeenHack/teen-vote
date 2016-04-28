@@ -2,35 +2,27 @@
 <p>This is a list of all national and state issues and possible candidates. For more information, click on the link.</p>
 <p>When you are ready to vote, click the "Vote Now" link- But make sure you've registered first!</p>
 <style>
-	/* http://stackoverflow.com/questions/35566603/make-font-awesome-icon-size-increase-on-mouseover */
+.img {
+	width: '40px';
+	border-style: none;
+	height: '200px';
+}
 
-	.img {
-		width: '40px';
-		border-style: none;
-		height: '200px';
-	}
+.fa-question-circle:hover {
+	-webkit-transform: scale(1.2);
+}
 
-  .fa-question-circle:hover {
-    -webkit-transform: scale(1.2);
-  }
+.choice:hover {
+	-webkit-transform: scale(1.05);
+}
 
-  .choice:hover {
-  	-webkit-transform: scale(1.2);
-  }
+.fa-question-circle {  
+	transition: font-size 0.35s ease; 
+}
 
-  .fa-question-circle {  
-    transition: font-size 0.35s ease; 
-  }
-
-	a:hover {
-		color: #000;
-		background-color: #fff;
-		text-decoration: none;
-	}
-
-	.slick-prev:before, .slick-next:before{
-	    color:#333;
-	}
+.slick-prev:before, .slick-next:before{
+    color:#333;
+}
 </style>
 <script>
 $(function() {
@@ -39,7 +31,7 @@ $(function() {
   		dots: true,
   		infinite: true,
   		speed: 300,
-	 		slidesToShow: 4,
+ 		slidesToShow: 4,
   		slidesToScroll: 4,
   		responsive: [
 		    {

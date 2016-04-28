@@ -6,6 +6,11 @@
   <% @issue.choices.each do |choice| %>
     <li>
       <%= choice.title %>
+      <ul>
+        <li>
+          Party:<%= choice.party %>
+        </li>
+      </ul>
     </li>
   <% end %>
 </ul>
