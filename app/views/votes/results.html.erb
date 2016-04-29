@@ -1,3 +1,42 @@
 <h1>Results</h1>
 <p>Find me in app/views/votes/results.html.erb</p>
 <p>TO DO add in WestShore's code</p>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="dual_x_div" style="width: 900px; height: 500px;"></div>
+   <!--todo: refactor the example code below and get it into a js file -->
+<script>
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Candidate', 'Registered', 'Unregistered','Total'],
+          ['Hilary Clinton', 8000, 2000,10000],
+          ['Bernie Sanders', 14000, 5000,19000],
+          ['Donald Trump', 3000, 1400, 4400],
+        ]);
+
+        var options = {
+          width: 800,
+          chart: {
+            title: 'Voting Results',
+            subtitle: 'All schools, all ballot items.'
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          series: {
+            0: { axis: 'registered' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'unregistered' }, // Bind series 1 to an axis named 'brightness'.
+            2: { axis: 'total' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            x: {
+              distance: {label: 'votes'}, // Bottom x-axis.
+              brightness: {side: 'top', label: ''} // Top x-axis.
+            }
+          }
+        };
+
+      var chart = new google.charts.Bar(document.getElementById('dual_x_div'));
+      chart.draw(data, options);
+    };
+    </script>
