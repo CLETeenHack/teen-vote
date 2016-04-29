@@ -48,15 +48,15 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">About CLETeenHack</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="http://cleteenhack.com/about-us/" target="_blank">About CLETeenHack</a></li>
                     </ul>
                 </li>
                 <%= active_link_to 'Contact', '/contact', :wrap_tag => :li %>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li style="padding: 8px"><button class="btn btn-danger btn-lg" >Vote Now!</button></li>
+                <li style="padding: 8px"><button class="btn btn-danger btn-lg" onclick="location.href='/vote'" >Vote Now!</button></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
