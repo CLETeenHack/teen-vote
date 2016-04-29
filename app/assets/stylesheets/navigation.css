@@ -1,7 +1,10 @@
 /*
 	body {
+<<<<<<< HEAD
+=======
 /*This was overriding the site's stylesheets and messing with the look and feel.Commented out*/
 /*body {
+>>>>>>> origin/master
 		font: 1em arial, helvetica, sans-serif;
 		margin: 0;
 		padding: 0;
@@ -79,5 +82,8 @@
 		font-style: italic;
 	}
 	*/
+<<<<<<< HEAD
+=======
 	
 
+>>>>>>> origin/master

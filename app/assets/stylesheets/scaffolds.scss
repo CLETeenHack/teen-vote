@@ -1,3 +1,15 @@
+h2,h3,h4,h5,h6{
+ /*changing font fam of headings other than h1*/
+  font-family: "Open Sans Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.btn-default{
+ /*adding top and bottom margin to btn default*/
+  margin: 24px auto;
+}
+
+
+
 /* removing in favor of bootstrap.css. Leaving here *just in case*.*
 /*
 
