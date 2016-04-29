@@ -1,14 +1,29 @@
 <h1>Results</h1>
 <p>Find me in app/views/votes/results.html.erb</p>
 <p>TO DO add in WestShore's code</p>
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
        <div id="dual_x_div" style="width: 900px; height: 500px;"></div>
-   <!--todo: refactor the example code below and get it into a js file -->
+   <!--todo: refactor the example code below and get it into a js file.
+   update votes api to send 'Candidate/Issue', 'Registered', 'Unregistered','Total'
+   -->
 <script>
+    $( document ).ready(function() {
+    <%@issues.each do |issue| %>
+    $.get( "/api/votes", { issue_id: "<%=issue.id%>" },
+      function(data){
+        console.log(data.votes);
+      });
+    
+     <%end %>      
+      
+     
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawStuff);
 
-      function drawStuff() {
+      
+    });
+    function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
           ['Candidate', 'Registered', 'Unregistered','Total'],
           ['Hilary Clinton', 8000, 2000,10000],
@@ -18,20 +33,23 @@
 
         var options = {
           width: 800,
+          colors: ['#be1621', '#011640', '#454545'],
           chart: {
             title: 'Voting Results',
             subtitle: 'All schools, all ballot items.'
           },
           bars: 'horizontal', // Required for Material Bar Charts.
           series: {
-            0: { axis: 'registered' }, // Bind series 0 to an axis named 'distance'.
-            1: { axis: 'unregistered' }, // Bind series 1 to an axis named 'brightness'.
-            2: { axis: 'total' } // Bind series 1 to an axis named 'brightness'.
+            0: { axis: 'registered' }, // Bind series 0 to an axis named 'registered'.
+            1: { axis: 'unregistered' }, // Bind series 1 to an axis named 'unregistered'.
+            2: { axis: 'total' } // Bind series 2 to an axis named 'total'.
           },
           axes: {
             x: {
-              distance: {label: 'votes'}, // Bottom x-axis.
-              brightness: {side: 'top', label: ''} // Top x-axis.
+              registered: {label: 'votes'}, // Bottom x-axis.
+              unregistered: {side: 'top', label: 'unregistered'}, // Top x-axis.
+              total: {side: 'top', label: 'total'} // Top x-axis.
+           
             }
           }
         };
