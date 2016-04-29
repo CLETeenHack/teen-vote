@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'contact/index'
+  resources :contact
+  get 'contact/index' => 'contact#index'
 
-  get 'about/index'
+  resources :about
+  get 'about/index' => 'about#index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :issues, only: [:show, :index]
