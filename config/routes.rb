@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :issues, only: [:show, :index]
+  resources :ballots, only: [:show, :index]
+  resources :votes, only: [:new, :create]
   root 'home#index'
+  resources :registrations
   get 'resources' => 'home#resources'
   
   resources :votes, only: [:index]  

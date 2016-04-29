@@ -2,3 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Added to try and get the CLE Teen Vote logo vertically centered
+.navbar-brand img {
+    position: relative;
+    top: -18px;
+}

@@ -1,16 +1,21 @@
 /*
 	body {
+<<<<<<< HEAD
+=======
+/*This was overriding the site's stylesheets and messing with the look and feel.Commented out*/
+/*body {
+>>>>>>> origin/master
 		font: 1em arial, helvetica, sans-serif;
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	#myTabHeader {
 		background-color:pink;
-		
-		
+
+
 	}
-	
+
     #myTabHeader ul {
 		list-style: none;
 		padding: 0;
@@ -19,12 +24,12 @@
 		float: left;
 		width: 100%;
     }
-    
+
 	#myTabHeader li {
 		float: left;
 		margin: 0 1em 0 0;
     }
-    
+
 	#myTabHeader a {
 		font: 1.6em arial, helvetica, sans-serif;
 		text-decoration: none;
@@ -32,40 +37,53 @@
 		width: 6em;
 		padding: 0 0.5em;
 		font-weight: bold;
+		border-bottom: 0.5em solid blue;
+		color: blue;
 		color: black;
 		border-bottom: 0.5em solid #ffcc66;  
 		color: #ffcc66;
     }
-	
+
 	#myTabHeader a:hover {
-		color: #ffaa33;
-		border-color: #ffaa33;
+		background: white;
+		color: red;
+		border-color: red;
 	}
+
+	#myTabHeader #selected a {
+		color: red;
+		border-color: red;
 	
 	#myTabHeader #selected a { 
 		color: #ff8800;
 		border-color: #ff8800; 
 	}
-	
+
 	#myTabHeader #selected a:hover {
-		color: green;
-		border-color: green;
+		background: white;
+		color: red;
+		border-color: red;
 	}
-	
+
 	#content {
 		clear: both;
 		padding: 1em;
 	}
-	
+
 	#content p {
 		margin: 0 0 1em 0;
 	}
-	
+
 	h1 {
 		margin: 0;
 		padding: 0.5em 0 1em 0.5em;
-		color: #ff8800;
+		color: blue;
 		font-size: 1.5em;
 		font-style: italic;
 	}
 	*/
+<<<<<<< HEAD
+=======
+	
+
+>>>>>>> origin/master
