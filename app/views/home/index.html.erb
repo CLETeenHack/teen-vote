@@ -1,12 +1,166 @@
 <style>
-    body{
-        background-image: url("http://www.voteforfun.org/wp-content/gallery/democratic-vs-republican-party-in-america/democratic_vs_republican_party_in_america.jpg")
+    h1, h4{
+        color: blue
     }
+    
+    #hero{
+        background-image: url("/assets/janeAddamsPics/JaneAddams.jpg");
+        background-repeat: no-repeat;
+        background-size: 95% 100%;
+        height: 700px;
+       
+      
+    }
+    
+    #button{
+        position: right;
+        padding-right: 100px;
+    }
+  
 </style>
 
+
 <h1>Home</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<p>Under Construction</p>
-<%= link_to 'Admin', rails_admin_path %> |
-<%= link_to 'Issues', issues_path %> |
-<a href="/api/docs">API Documentation</a>
+<!--this is our large picture-->
+<div class="container-fluid">
+    <div class="row" id="hero"><!--picture is in the css as a background-->
+        <div  class="col-md-12" id="button">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    
+     <div class="col-md-9">
+                                    <!-- Kendale/Jamir-->
+                                    
+         <!--republican canidates-->
+        <div class="row" >
+            <div class="col-md-12">
+            <!-- enter header box contents below-->
+            <h1>2016 Election</h1>
+            </div>
+        </div>
+        
+        
+        <!--This is where the party title and 3 candidates go-->
+        <div class="row" style= "background-color:white;">
+         
+             <div class="col-md-2">
+               <h1> canadiates
+               </h1>
+             </div>
+         
+             <div class="col-md-2">
+             <!--enter candidate picture below-->  
+             <img src="/assets/janeAddamsPics/bernie sanders.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/>
+             </div>
+            
+             <div class="col-md-2">
+             <!--enter candidate picture below-->  
+             <img src="/assets/janeAddamsPics/hillary clinton.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/>
+             </div>
+         
+             <div class="col-md-2">
+             <!--enter candidate picture below-->  
+             <img src="/assets/janeAddamsPics/lincoln.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/>
+             </div>
+        
+            <div class="col-md-2">
+                <img src="/assets/janeAddamsPics/jim webb.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/> 
+            </div>
+            
+            <div class="col-md-2">
+                <img src="/assets/janeAddamsPics/o'malley.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/>
+            </div>
+        
+    
+        </div><!--end of row-->
+ 
+ 
+        <!--democrates canidates-->
+      
+        <div class="row" style= "background-color: white"> 
+            <div class="col-md-2">
+               <h1>Words</h1>
+            </div>
+        
+            <div class="col-md-2">
+            <!--enter candidate picture below-->  
+            <img src="/assets/janeAddamsPics/donald trump.jpg 1.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/>
+            </div>
+            
+            <div class="col-md-2">
+            <!--enter candidate picture on below-->
+            <img src="/assets/janeAddamsPics/john kasich.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/>
+            </div>
+            
+            <div class="col-md-2">
+            <!--enter candidate picture on below-->  
+            <img src="/assets/janeAddamsPics/ted cruz.jpg 1.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/>
+            </div>
+            
+            <div class="col-md-2">
+                <img src="/assets/janeAddamsPics/carson.jpg" height="100px" width="100px" class="img-responsive" alt="Responsive image"/>
+            </div>
+            
+            <div class="col-md-2">
+                <img src="/assets/janeAddamsPics/rubio.jpg" height="200px" width="200px" class="img-responsive" alt="Responsive image"/>
+            </div>
+        </div><!--end of row-->
+
+ </div><!-- outer row close--> 
+
+                                    <!-- Kendale/Jamir end-->
+
+
+
+
+
+
+
+  
+    <div class="col-md-3" style="background-color: white">  
+    
+          <!-- Vote Now Button -->
+          <a href="/votes/new"> <!-- need vote now link instead of google -->
+          <img src="/assets/janeAddamsPics/vote image button.jpg" height="200px" width="200px" align="center"/> </a>
+   </div> 
+</div><!--outer outer row closed-->
+
+
+
+
+                                    <!--Daija-->
+</div>
+<div class="row" margin-top="20px";>
+        
+        <div class="col-md-4">
+            
+         <img src="/assets/janeAddamsPics/voices.jpg" height="200px" width="200px" class="img-responsive" alt="Responsive image"/>
+         <!--text here-->
+         <h1>voice your <br>opinion</h1>
+         <p class="copy">For many of us, teens being unable to vote yet may seem unfair,but our voices count.
+            Just because of our age difference it doesnt mean we cant be involved in government choices, such as voting.
+            You have the oppritunity to reflect on the generations to come</p>
+         </div>
+        
+         <div class="col-md-4">
+          
+          <img src="/assets/janeAddamsPics/can.jpg" height="200px" width="200px" alt="Responsive image" align="center"/>
+          <h1>learn about <br>the canidates</h1>
+          <p class="copy">These are American citizens that are being considered for a position to better our nation by lowing unemployment , making it possible
+          for citizens to have health care insurance, lower the rate of poverty and other issues facing our nations future.</p>
+         
+         </div>
+         
+         <div class="col-md-4">
+         <img src="/assets/janeAddamsPics/6918993.jpg" height="200px" width="200px" alt="Responsive image"/>
+           <h1>Learn about<br> the issues</h1>
+          <p class="copy" >Government Issues are important topics or problems that are debated or discussed by the citizens and legislators of our nation. Examples of our nations issues are bullying , child abuse , unemplyment , voting rights , poverty and hate crimes
+             .</p>
+
+        </div>
+    </div>
