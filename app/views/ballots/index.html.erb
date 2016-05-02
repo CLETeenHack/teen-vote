@@ -23,6 +23,7 @@
 .slick-prev:before, .slick-next:before{
     color:#333;
 }
+
 </style>
 <script>
 $(function() {
@@ -61,12 +62,13 @@ $(function() {
 		});
 	});
 </script>
+<h1>National Issues</h1>
 <% @issues.each do |issue| %>
 	<div class="row">
 		<div class="col-md-12">
 			<h2>
 		      <%= issue.title %>
-		      <%= link_to issue_path(issue) do %>
+		      <%= link_to ballot_path(issue) do %>
 		      	<i class="fa fa-question-circle"></i>
 		      <% end %>
 		    </h2>
@@ -81,7 +83,6 @@ $(function() {
 			</div>
 		<% end %>
 	</div>
-
 <% end %>
 <h1 style="text-align: left" ;><%= link_to "Vote Now", new_vote_path, class: "btn btn-default"%></h1>
 <br/>
