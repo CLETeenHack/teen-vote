@@ -21,7 +21,7 @@
         - title: 'NO'
           image_url: '/assets/choices/red_x.svg'
       - title: 'Fair Wage Amendment'
-        description: 'Minimum wage,Increases the state minimum wage to $10 per hour in 2017'
+        description: 'Increases the state minimum wage to $10 per hour in 2017'
         choices:
         - title: 'YES'
           image_url: '/assets/choices/yes_check.svg'
@@ -56,7 +56,7 @@
         - title: 'NO'
           image_url: '/assets/choices/red_x.svg'
       - title: 'Medicinal Cannabis and Industrial Hemp Amendment'
-        description: 'Legalizes marijuana for medicinal purposes and allow farmers to grow industrial hemp'
+        description: 'Legalizes marijuana for medicinal purposes and allows farmers to grow industrial hemp'
         choices:
         - title: 'YES'
           image_url: '/assets/choices/yes_check.svg'

@@ -1,4 +1,4 @@
-<h1>Votes#new</h1>
+<h1>Ballot</h1>
 <p>Find me in app/views/votes/new.html.erb</p>
 <style>
 .fa-question-circle:hover {
@@ -13,6 +13,13 @@ a:hover {
 	color: #000;
 	background-color: #fff;
 	text-decoration: none;
+}
+
+.navbar-static-top {
+  display: none;
+}
+.footer {
+  display: none;
 }
 </style>
 
@@ -66,6 +73,7 @@ function gatherVotes() {
       <br>
       <%= check_box 'care_about_this', issue.id %> I care about this
   <% end %>
-  <br/>
+  <br>
+  <br>
   <%= submit_tag "Submit Vote", class: "btn btn-default" %>
 <% end %>

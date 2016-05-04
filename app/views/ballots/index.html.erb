@@ -1,6 +1,6 @@
-<h1 style="text-align: left" ; color="blue">Issues</h1>
-<p>This is a list of all national and state issues and possible candidates. For more information, click on the link.</p>
-<p>When you are ready to vote, click the "Vote Now" link- But make sure you've registered first!</p>
+<h1 style="text-align: left" ; color="blue">Sample Ballot</h1>
+<p>This is a sample ballot containing all national and state issues and possible candidates. For more information, click on the question mark.</p>
+<p>When you are ready to vote, click the "Vote Now" button- But make sure you've registered first!</p>
 <style>
 .img {
 	width: '40px';
@@ -13,7 +13,7 @@
 }
 
 .choice:hover {
-	-webkit-transform: scale(1.05);
+	-webkit-transform: scale(1.03);
 }
 
 .fa-question-circle {  
@@ -22,6 +22,36 @@
 
 .slick-prev:before, .slick-next:before{
     color:#333;
+}
+.slick-slide img {
+	margin-left: auto;
+	margin-right: auto;
+}
+.slick-slide {
+	text-align: center;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 </style>
@@ -82,6 +112,9 @@ $(function() {
 				<%= choice.title %>
 			</div>
 		<% end %>
+	</div>
+	<div class="tooltip">Hover over me
+	  <span class="tooltiptext">Tooltip text</span>
 	</div>
 <% end %>
 <h1 style="text-align: left" ;><%= link_to "Vote Now", new_vote_path, class: "btn btn-default"%></h1>
