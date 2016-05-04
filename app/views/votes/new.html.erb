@@ -1,5 +1,4 @@
 <h1>Ballot</h1>
-<p>Find me in app/views/votes/new.html.erb</p>
 <style>
 .fa-question-circle:hover {
 	-webkit-transform: scale(1.2);
@@ -7,12 +6,6 @@
 
 .fa-question-circle {  
   transition: font-size 0.35s ease; 
-}
-
-a:hover {
-	color: #000;
-	background-color: #fff;
-	text-decoration: none;
 }
 
 .navbar-static-top {
@@ -25,7 +18,15 @@ a:hover {
 
 <script>
 function confirmVote() {
+  if (!userVoted()) {
+    alert('Please make at least one vote.');
+    return false;
+  }
   return confirm('Are you sure you want to vote for:\n' + gatherVotes()) ;
+}
+
+function userVoted() {
+  return $('input:radio:checked').length > 0;
 }
 
 function gatherVotes() {
@@ -39,7 +40,45 @@ function gatherVotes() {
 
 <%= form_tag votes_path, onsubmit: "return confirmVote();" do %>
   <%= hidden_field_tag 'voter_id', @voter.id %>
-  <% @issues.each do |issue| %>
+  <h1>National Issues</h1>
+  <% @national_issues.each do |issue| %>
+    <%= fields_for "issue[]", issue do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>
+            <%= issue.title %>
+            <%= link_to issue_path(issue) do %>
+              <i class="fa fa-question-circle"></i>
+            <% end %>
+          </h2>
+        </div>
+      </div>
+    <% end %>
+      <div class="row">
+        <% issue.choices.each do |choice| %>
+          <div class="col-md-3">
+            <strong>
+              <%= radio_button_tag "issue[#{issue.id}]", choice.id %> 
+              <%= choice.title %>
+            </strong>
+          </div>
+        <% end %>
+        <div class="col-md-3">
+          <strong>
+            <%= radio_button_tag "issue[#{issue.id}]", '' %> 
+            None
+          </strong>
+        </div>
+      </div>
+      <br>
+      <%= check_box 'understand_this', issue.id %> I understand
+      <br>
+      <%= check_box 'care_about_this', issue.id %> I care about this
+  <% end %>
+  <br>
+  <br>
+  <h1>State Issues</h1>
+  <% @state_issues.each do |issue| %>
     <%= fields_for "issue[]", issue do |f| %>
       <div class="row">
         <div class="col-md-12">
@@ -76,4 +115,7 @@ function gatherVotes() {
   <br>
   <br>
   <%= submit_tag "Submit Vote", class: "btn btn-default" %>
+  
+  <%= link_to 'Redirect to Sample Ballot', ballots_path %>
+  
 <% end %>

@@ -13,7 +13,7 @@
 }
 
 .choice:hover {
-	-webkit-transform: scale(1.03);
+	-webkit-transform: scale(1.05);
 }
 
 .fa-question-circle {  
@@ -93,7 +93,7 @@ $(function() {
 	});
 </script>
 <h1>National Issues</h1>
-<% @issues.each do |issue| %>
+<% @national_issues.each do |issue| %>
 	<div class="row">
 		<div class="col-md-12">
 			<h2>
@@ -106,15 +106,37 @@ $(function() {
 	</div>
 	<div class="choice-list">
 		<% issue.choices.each do |choice| %>
-			<div class="choice">
-				<%= image_tag(choice.image_url, width: '100px', alt: choice.title) %>
+			<div class="choice" title="<%= choice.title %>">
+				<%= image_tag(choice.image_url, width: '100px', alt: choice.title, class: 'img-responsive') %>
 				<br/>
 				<%= choice.title %>
 			</div>
 		<% end %>
 	</div>
-	<div class="tooltip">Hover over me
-	  <span class="tooltiptext">Tooltip text</span>
+<% end %>
+<br/>
+<br/>
+<br/>
+<h1>State Issues</h1>
+<% @state_issues.each do |issue| %>
+	<div class="row">
+		<div class="col-md-12">
+			<h2>
+		      <%= issue.title %>
+		      <%= link_to ballot_path(issue) do %>
+		      	<i class="fa fa-question-circle"></i>
+		      <% end %>
+		    </h2>
+		</div>
+	</div>
+	<div class="choice-list">
+		<% issue.choices.each do |choice| %>
+			<div class="choice" title="<%= choice.title %>">
+				<%= image_tag(choice.image_url, width: '100px', alt: choice.title, class: 'img-responsive') %>
+				<br/>
+				<%= choice.title %>
+			</div>
+		<% end %>
 	</div>
 <% end %>
 <h1 style="text-align: left" ;><%= link_to "Vote Now", new_vote_path, class: "btn btn-default"%></h1>
