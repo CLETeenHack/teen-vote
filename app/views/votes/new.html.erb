@@ -1,38 +1,56 @@
-<h1>Votes#new</h1>
-<p>Find me in app/views/votes/new.html.erb</p>
+<!--This is our  Ballot Page-->
+<h1>Ballot</h1>
+<!--Place CSS code in style tag-->
 <style>
+/*Styling for the font awesome question circle on ballot page, enlarges the size of the question circle on hover*/ 
 .fa-question-circle:hover {
 	-webkit-transform: scale(1.2);
 }
 
-.fa-question-circle {  
-  transition: font-size 0.35s ease; 
+.fa-question-circle {
+  transition: font-size 0.35s ease;
 }
-
-a:hover {
-	color: #000;
-	background-color: #fff;
-	text-decoration: none;
+/*Hides the header and footer on the ballot page so that it looks simplistic */
+.navbar-static-top {
+  display: none;
+}
+.footer {
+  display: none;
 }
 </style>
 
 <script>
+//Comfirms if user has make at least one selection on the ballot page. If the user has made no selections, they are prompted to make at least one vote
 function confirmVote() {
-  return confirm('Are you sure you want to vote for:\n' + gatherVotes()) ;
+  if (!userVoted()) {
+    alert('Please make at least one vote.');
+    return false;
+  }
+  //When user has selected their votes, comfirm their choices and submit
+  return confirm('Are you sure you want to submit the following vote?\n' + gatherVotes()) ;
+}
+
+function userVoted() {
+  return $('input:radio:checked').length > 0;
 }
 
 function gatherVotes() {
   var message = "";
   $.each($('input:radio:checked'), function( index, value ) {
-    message = message + $(value).parent().text().trim() + "\n ";
+
+    console.log($(value).data('issue-title'));
+    message = message +
+      $(value).data('issue-title') + ': ' +
+      $(value).parent().text().trim() + "\n ";
   });
   return message;
 }
 </script>
-
+<!--Prompts the user to choose a vote for each National Issue with a radio button. Also adds checkboxes for "I Care" and "I Understand"-->
 <%= form_tag votes_path, onsubmit: "return confirmVote();" do %>
   <%= hidden_field_tag 'voter_id', @voter.id %>
-  <% @issues.each do |issue| %>
+  <h1>National Issues</h1>
+  <% @national_issues.each do |issue| %>
     <%= fields_for "issue[]", issue do |f| %>
       <div class="row">
         <div class="col-md-12">
@@ -49,14 +67,14 @@ function gatherVotes() {
         <% issue.choices.each do |choice| %>
           <div class="col-md-3">
             <strong>
-              <%= radio_button_tag "issue[#{issue.id}]", choice.id %> 
+              <%= radio_button_tag "issue[#{issue.id}]", choice.id, false, 'data-issue-title'=> issue.title %>
               <%= choice.title %>
             </strong>
           </div>
         <% end %>
         <div class="col-md-3">
           <strong>
-            <%= radio_button_tag "issue[#{issue.id}]", '' %> 
+            <%= radio_button_tag "issue[#{issue.id}]", '' %>
             None
           </strong>
         </div>
@@ -66,6 +84,50 @@ function gatherVotes() {
       <br>
       <%= check_box 'care_about_this', issue.id %> I care about this
   <% end %>
-  <br/>
+  <br>
+  <br>
+  
+  <!--Prompts the user to choose a vote for each State Issue with a radio button. Also adds checkboxes for "I Care" and "I Understand"-->
+  <h1>State Issues</h1>
+  <% @state_issues.each do |issue| %>
+    <%= fields_for "issue[]", issue do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>
+            <%= issue.title %>
+            <%= link_to issue_path(issue) do %>
+              <i class="fa fa-question-circle"></i>
+            <% end %>
+          </h2>
+        </div>
+      </div>
+    <% end %>
+      <div class="row">
+        <% issue.choices.each do |choice| %>
+          <div class="col-md-3">
+            <strong>
+              <%= radio_button_tag "issue[#{issue.id}]", choice.id, false, 'data-issue-title'=> issue.title %>
+              <%= choice.title %>
+            </strong>
+          </div>
+        <% end %>
+        <div class="col-md-3">
+          <strong>
+            <%= radio_button_tag "issue[#{issue.id}]", '' %>
+            None
+          </strong>
+        </div>
+      </div>
+      <br>
+      <%= check_box 'understand_this', issue.id %> I understand
+      <br>
+      <%= check_box 'care_about_this', issue.id %> I care about this
+  <% end %>
+  <br>
+  <br>
+<!--Button to submit votes-->
   <%= submit_tag "Submit Vote", class: "btn btn-default" %>
+<!--If user would like to exit the ballot page without making any votes, this link directs them to the Sample Ballot page-->
+  <%= link_to 'Redirect to Sample Ballot', ballots_path %>
+
 <% end %>
