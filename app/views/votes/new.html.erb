@@ -4,8 +4,8 @@
 	-webkit-transform: scale(1.2);
 }
 
-.fa-question-circle {  
-  transition: font-size 0.35s ease; 
+.fa-question-circle {
+  transition: font-size 0.35s ease;
 }
 
 .navbar-static-top {
@@ -22,7 +22,7 @@ function confirmVote() {
     alert('Please make at least one vote.');
     return false;
   }
-  return confirm('Are you sure you want to vote for:\n' + gatherVotes()) ;
+  return confirm('Are you sure you want to submit the following vote?\n' + gatherVotes()) ;
 }
 
 function userVoted() {
@@ -32,7 +32,11 @@ function userVoted() {
 function gatherVotes() {
   var message = "";
   $.each($('input:radio:checked'), function( index, value ) {
-    message = message + $(value).parent().text().trim() + "\n ";
+
+    console.log($(value).data('issue-title'));
+    message = message +
+      $(value).data('issue-title') + ': ' +
+      $(value).parent().text().trim() + "\n ";
   });
   return message;
 }
@@ -58,14 +62,14 @@ function gatherVotes() {
         <% issue.choices.each do |choice| %>
           <div class="col-md-3">
             <strong>
-              <%= radio_button_tag "issue[#{issue.id}]", choice.id %> 
+              <%= radio_button_tag "issue[#{issue.id}]", choice.id, false, 'data-issue-title'=> issue.title %>
               <%= choice.title %>
             </strong>
           </div>
         <% end %>
         <div class="col-md-3">
           <strong>
-            <%= radio_button_tag "issue[#{issue.id}]", '' %> 
+            <%= radio_button_tag "issue[#{issue.id}]", '' %>
             None
           </strong>
         </div>
@@ -95,14 +99,14 @@ function gatherVotes() {
         <% issue.choices.each do |choice| %>
           <div class="col-md-3">
             <strong>
-              <%= radio_button_tag "issue[#{issue.id}]", choice.id %> 
+              <%= radio_button_tag "issue[#{issue.id}]", choice.id, false, 'data-issue-title'=> issue.title %>
               <%= choice.title %>
             </strong>
           </div>
         <% end %>
         <div class="col-md-3">
           <strong>
-            <%= radio_button_tag "issue[#{issue.id}]", '' %> 
+            <%= radio_button_tag "issue[#{issue.id}]", '' %>
             None
           </strong>
         </div>
@@ -115,7 +119,7 @@ function gatherVotes() {
   <br>
   <br>
   <%= submit_tag "Submit Vote", class: "btn btn-default" %>
-  
+
   <%= link_to 'Redirect to Sample Ballot', ballots_path %>
-  
+
 <% end %>
