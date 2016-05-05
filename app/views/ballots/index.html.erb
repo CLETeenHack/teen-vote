@@ -1,17 +1,20 @@
+<!--This is the Sample Ballot page-->
 <h1 style="text-align: left" ; color="blue">Sample Ballot</h1>
+<!--Gives directions to users about the web page-->
 <p>This is a sample ballot containing all national and state issues and possible candidates. For more information, click on the question mark.</p>
 <p>When you are ready to vote, click the "Vote Now" button- But make sure you've registered first!</p>
 <style>
+/*Styles the image to be a certain size*/
 .img {
 	width: '40px';
 	border-style: none;
 	height: '200px';
 }
-
+/*Scales the question circle 20% on hover*/
 .fa-question-circle:hover {
 	-webkit-transform: scale(1.2);
 }
-
+/*Scales the image for the choice 5% on hover*/
 .choice:hover {
 	-webkit-transform: scale(1.05);
 }
@@ -19,7 +22,7 @@
 .fa-question-circle {  
 	transition: font-size 0.35s ease; 
 }
-
+/*Modifies the slick slide bar, places it in the center of the page*/
 .slick-prev:before, .slick-next:before{
     color:#333;
 }
@@ -30,6 +33,7 @@
 .slick-slide {
 	text-align: center;
 }
+/*Modifies the tooltip on hover over the image of the choice*/
 .tooltip {
     position: relative;
     display: inline-block;
@@ -55,9 +59,11 @@
 }
 
 </style>
+
 <script>
 $(function() {
 	/* javascript & jquery goes in a script block, you can keep it here */
+	/*Incorporate slick code, puts the slide bar in place on the webpage*/
 	$('.choice-list').slick({
   		dots: true,
   		infinite: true,
@@ -92,6 +98,8 @@ $(function() {
 		});
 	});
 </script>
+
+<!--Separates the National and State Issues provided to us from the Issues team. Makes each issue have choices-->
 <h1>National Issues</h1>
 <% @national_issues.each do |issue| %>
 	<div class="row">
@@ -117,6 +125,7 @@ $(function() {
 <br/>
 <br/>
 <br/>
+<!--State issues and their choices-->
 <h1>State Issues</h1>
 <% @state_issues.each do |issue| %>
 	<div class="row">
@@ -139,5 +148,6 @@ $(function() {
 		<% end %>
 	</div>
 <% end %>
+<!--Button that directs users to the Vote Now/ Ballt Page-->
 <h1 style="text-align: left" ;><%= link_to "Vote Now", new_vote_path, class: "btn btn-default"%></h1>
 <br/>

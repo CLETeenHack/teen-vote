@@ -1,18 +1,6 @@
 -   title: 'State Issues'
     state: true
     issues:
-      # - title: 'Most Sinister Villian'
-      #   description: 'The most feared and sinister villian in the universe'
-      #   choices:
-      #   - title: 'Darkseid'
-      #     party: 'DC'
-      #     image_url: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/90/DarkseidCrain.jpg/250px-DarkseidCrain.jpg'
-      #   - title: 'Joker'
-      #     party: 'DC'
-      #     image_url: 'http://img14.deviantart.net/50ca/i/2012/362/3/5/the_joker___the_animated_series_2_by_annashipway-d5pg866.jpg'
-      #   - title: 'Mr. Mxyzptlk'
-      #     party: 'Marvel'
-      #     image_url: 'https://scryptcomics.files.wordpress.com/2013/04/mxy.png'
       - title: 'Clean Energy Initiative'
         description: 'Calls for $14 billion in spending on alternative energy research and infrastructure projects'
         choices:

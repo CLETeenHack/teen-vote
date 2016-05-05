@@ -1,5 +1,8 @@
+<!--This is our  Ballot Page-->
 <h1>Ballot</h1>
+<!--Place CSS code in style tag-->
 <style>
+/*Styling for the font awesome question circle on ballot page, enlarges the size of the question circle on hover*/ 
 .fa-question-circle:hover {
 	-webkit-transform: scale(1.2);
 }
@@ -7,7 +10,7 @@
 .fa-question-circle {
   transition: font-size 0.35s ease;
 }
-
+/*Hides the header and footer on the ballot page so that it looks simplistic */
 .navbar-static-top {
   display: none;
 }
@@ -17,11 +20,13 @@
 </style>
 
 <script>
+//Comfirms if user has make at least one selection on the ballot page. If the user has made no selections, they are prompted to make at least one vote
 function confirmVote() {
   if (!userVoted()) {
     alert('Please make at least one vote.');
     return false;
   }
+  //When user has selected their votes, comfirm their choices and submit
   return confirm('Are you sure you want to submit the following vote?\n' + gatherVotes()) ;
 }
 
@@ -41,7 +46,7 @@ function gatherVotes() {
   return message;
 }
 </script>
-
+<!--Prompts the user to choose a vote for each National Issue with a radio button. Also adds checkboxes for "I Care" and "I Understand"-->
 <%= form_tag votes_path, onsubmit: "return confirmVote();" do %>
   <%= hidden_field_tag 'voter_id', @voter.id %>
   <h1>National Issues</h1>
@@ -81,6 +86,8 @@ function gatherVotes() {
   <% end %>
   <br>
   <br>
+  
+  <!--Prompts the user to choose a vote for each State Issue with a radio button. Also adds checkboxes for "I Care" and "I Understand"-->
   <h1>State Issues</h1>
   <% @state_issues.each do |issue| %>
     <%= fields_for "issue[]", issue do |f| %>
@@ -118,8 +125,9 @@ function gatherVotes() {
   <% end %>
   <br>
   <br>
+<!--Button to submit votes-->
   <%= submit_tag "Submit Vote", class: "btn btn-default" %>
-
+<!--If user would like to exit the ballot page without making any votes, this link directs them to the Sample Ballot page-->
   <%= link_to 'Redirect to Sample Ballot', ballots_path %>
 
 <% end %>
