@@ -1,2 +1,156 @@
-<h1>Contact#index</h1>
-<p>Find me in app/views/contact/index.html.erb</p>
+<h1>Contact Us</h1>
+ <head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+<style type="text/css">
+    .box {
+        height:40px;
+        width:40px;
+        color:white;
+        font-size:36px;
+        background-color:#ff0000;
+        float:left;
+        display:block;
+    }
+    
+    .link {
+        display:block;
+        float:right;
+    }
+    
+    .feeling {color:red;
+        font-family:cursive;
+        
+    }
+    .hello{ font-size: 18;
+        color: blue;
+        font-family:Arial Black;
+        
+    }
+    
+    .schoollink {
+        font-size: ;
+    }
+    h1 {
+        text-align :center;
+    }
+.schools{
+    font-size:30px;
+    text-align:center;
+    
+}
+
+.ui-slider{ 
+    width: 400px; height: 15px; 
+    
+}
+
+
+.col-md-9{
+    border-radius: 25px;
+    border: 2px solid #C0C0C0;
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+
+}
+.col-md-3{
+    margin: 50px;
+}
+
+textarea {
+   resize: none;
+   width: 400px;
+}
+form{
+    font-size: 75%;
+}
+
+
+</style>
+
+ <script>
+  $(function() {
+    $( "#slider" ).slider({
+      width:75,
+      height:10,
+      min: 1,
+      max: 5,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount" ).val(  ui.value );
+      }
+    });
+    $( "#amount" ).val(  $( "#slider" ).slider( "value" ) );
+  });
+  </script>
+</head>
+
+
+
+
+           
+
+    
+    <!--form/school-->
+<div class="container">
+        <div class= "col-md-9">
+
+    
+    <!-- form --->    
+        <form class=hello 
+        action="MAILTO:CleTeenHack@WeCanCodeIT.org." method="post" enctype="text/plain">
+      First Name:<br>
+      <input type="text" name="firstname"><br>
+      Last Name:<br>
+      <input type="text" name="lastname"><br>
+      Email:<br>
+      <input type="text" name="email">
+      <br>
+      Phone Number:<br>
+      <input type="text" name="phonenumber"><br>
+     
+  Contact Subject:<br>
+  <input type="text" name="Contactsubject"><br>
+  Comment:<br>
+   <textarea rows="4" cols="50">
+        Write Your Comments Here! 
+   </textarea> <br><br>
+ <p class="feeling"> 
+      
+      <label for="amount">How Are You Feeling?<br>
+     "5" being Bad and "1" being Awesome!
+      </label>
+       <br>
+      <img src="assets/image/emoji-f-up.png" alt="HTML5 Icon" width="410.5" height="70">
+      <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"> <br>
+    
+    </p>
+         
+    <div id="slider"></div>
+   <input type="submit" value="Submit">
+
+
+  </form>
+  <!-- end of form -->
+  </div>
+  
+    <div class="col-md-3">
+   
+       <h2><u>Schools</u></h2>
+   
+       <img width="35" src= "assets/johnMarshall/marshall.jpg"/>&nbsp;<a href="http://www.clevelandmetroschools.org/Page/2217" target="_blank" class="schools">John Marshall</a><br/>
+       <img width="30" src= "assets/johnMarshall/shaw.png"/>&nbsp;<a href="http://www.east-cleveland.k12.oh.us/school_home.aspx?schoolID=12"  target="_blank" class="schools">Shaw</a><br/>
+       <img width="30" src= "assets/johnMarshall/addams.png"/>&nbsp;<a href="http://www.clevelandmetroschools.org/addamsbcc"  target="_blank" class="schools">Jane Addams</a><br/>
+       <img width="30" src= "assets/johnMarshall/beaumont_school.jpg"/>&nbsp;<a href="http://www.beaumontschool.org/"  target="_blank" class="schools">Beaumont</a><br/>
+       <img width="30" src= "assets/johnMarshall/WestShore.jpg"/>&nbsp;<a href="http://www.cleveland.com/westlake/index.ssf/2015/12/west_shore_chatter_rocky_river_4.html" class="schools" target="_blank" >West Shore</A><br/>
+     <br>
+     <br>
+        <a href="https://www.facebook.com/cleteenhack" target="_blank" > <img width="100" src= "assets/image/fb.png"/></a>&nbsp;
+        <a href="https://www.instagram.com/cleteenhack" target="_blank" > <img width="20" src= "assets/johnMarshall/Instagram.png"/></a>&nbsp;
+        <a href="https://www.twitter.com/cleteenhack" target="_blank" > <img width="20" src= "assets/image/Twitter.png"/></a>
+    </div>
+</div>

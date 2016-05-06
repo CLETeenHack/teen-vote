@@ -48,6 +48,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    chartkick (1.5.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -208,6 +209,7 @@ DEPENDENCIES
   active_link_to
   active_model_serializers
   apitome
+  chartkick
   font-awesome-rails
   pg
   pry-rails
@@ -221,4 +223,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.2
