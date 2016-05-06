@@ -1,10 +1,89 @@
-<h1>Issues#index</h1>
-<p>Find me in app/views/issues/index.html.erb</p>
 
-<ul>
+   <link rel="stylesheet" href="Issues.css" type="text/css" />
+   <link rel="stylesheet" href="Untitled1.css" type="text/css" />
+   <link rel="stylesheet" href="Untitled2.css" type="text/css" />
+  
+<div class="wrapper">
+  <h1>Issues</h1>
+  <p> These are issues and candidates that are going to be on the ballot this year and issues teens feel need more attention.</p>
+  <div>
+    <h3>Candidates</h3>
+    
+   <img src="assets/choices/bernie_sanders.jpg"><a href="https://berniesanders.com">Bernie Sanders</a></img>
+    <img src="assets/choices/donal_trump.jpg"><a href="https://www.donaldjtrump.com/">Donald trump</a></img>
+    <img src="assets/choices/hillary_clinton.jpg"><a href="https://www.hillaryclinton.com/">Hillary Clinton</a></img>
+    <img src="assets/choices/ted_cruz.jpg"><a href="https://www.cruzcarly.com/">Ted Cruz</a></img>
+    <img src="assets/choices/john_kasich.jpg"><a href="https://www.johnkasich.com/">John Kasich</a></img>
+    </div>
+  <!-- this information will come from a database-->  
+  <div>
+
+ <ul>
 <% @issues.each do |issue| %>
   <li>
     <%= link_to issue.title, issue %>
   </li>
 <% end %>
 </ul>
+  <!--for each issues in the state/national issues table, create an accordion entry-->
+    <div class="tab">
+      <input id="tab-one" type="checkbox" name="tabs">
+      <label for="tab-one">StateNationalIssues.IssueName</label>
+      <div class="tab-content">
+        <p> StateNationalIssues.IssueCategory</p>
+        <p> StateNationalIssues.IssueDesc</p>
+        <img src="StateNationalIssues.IssueImage"></img>
+        <button>Read More</button><!--path:StateNationalIssues.IssueReadMore>
+        <!--will resize images to be small-->
+      </div>
+    </div>
+    
+  </div>
+  <!--End of information from the database-->
+  <div>
+    <h3>Student Issues</h3>
+    <p> Issues concerning students</p>
+    <div class="tab">
+      <input id="tab-four" type="checkbox" name="tabs2">
+      <label for="tab-four">College Tuition:Should It Be Free?</label>
+      <div class="tab-content">
+        <p>Category: Education</p>
+                <p>A number of students who just graduated from high-school are debating if they should even go to college due to the tuition. Learn more about this issue before the outcoming election.</p>
+      </div>
+    </div>
+    <div class="tab">
+      <input id="tab-five" type="checkbox" name="tabs2">
+      <label for="tab-five">Gun Control</label>
+      <div class="tab-content">
+         <p>Category: Law</p>
+                <p>The Second Amendment of the U.S Constitution states that a citizen of the United States has a right to bear arms. Should this right be revoked? Learn more about this issue before the outcoming election.</p>
+      </div>
+    </div>
+    <div class="tab">
+      <input id="tab-six" type="checkbox" name="tabs2">
+      <label for="tab-six">Unemployment</label>
+      <div class="tab-content">
+         <p>Category: Economy</p>
+                <p>The unemployment rate has risen to 5% this past March. Make sure that our country's current and future generation can afford to have good lives. Learn more about this issue before the outcoming election. </p>
+     
+      </div>
+    </div>
+     <div class="tab">
+      <input id="tab-seven" type="checkbox" name="tabs2">
+      <label for="tab-seven">School Lunches</label>
+      <div class="tab-content">
+         <p>Category: Food and Agriculture</p>
+Our school lunches are unhealthy. Sometimes there is rotton fruit served. We should also have a variety of type of lunches for people who eat different type of foods.      </div>
+ 
+    </div>
+     <div class="tab">
+      <input id="tab-eight" type="checkbox" name="tabs2">
+      <label for="tab-eight">Obesity</label>
+      <div class="tab-content">
+         <p>Category: </p>
+                <p>More than 35% of adults in the U.S are obese. Also, 17% of all children face obesity. Find out more about what candiadates want to do about this issue. Learn more about this issue before the outcoming election.</p>
+   
+      </div>
+    </div>
+  </div>
+</div>
