@@ -9,15 +9,18 @@
   <div>
     <h3>Candidates</h3>
     
-   <img src="assets/choices/bernie_sanders.jpg"><a href="https://berniesanders.com">Bernie Sanders</a></img>
-    <img src="assets/choices/donal_trump.jpg"><a href="https://www.donaldjtrump.com/">Donald trump</a></img>
-    <img src="assets/choices/hillary_clinton.jpg"><a href="https://www.hillaryclinton.com/">Hillary Clinton</a></img>
-    <img src="assets/choices/ted_cruz.jpg"><a href="https://www.cruzcarly.com/">Ted Cruz</a></img>
-    <img src="assets/choices/john_kasich.jpg"><a href="https://www.johnkasich.com/">John Kasich</a></img>
+   <a href="https://berniesanders.com"><img src="assets/choices/bernie_sanders.jpg">Bernie Sanders</a>
+    <a href="https://www.donaldjtrump.com/"><img src="assets/choices/donal_trump.jpg">Donald trump</a>
+    <a href="https://www.hillaryclinton.com/"><img src="assets/choices/hillary_clinton.jpg">Hillary Clinton</a>
+    <a href="https://www.cruzcarly.com/"><img src="assets/choices/ted_cruz.jpg">Ted Cruz</a>
+    <a href="https://www.johnkasich.com/"><img src="assets/choices/john_kasich.jpg">John Kasich</a>
     </div>
   <!-- this information will come from a database-->  
-  <div>
 
+  <div>
+      
+<h3>Issues</h3>
+    
  <ul>
 <% @issues.each do |issue| %>
   <li>
@@ -25,19 +28,6 @@
   </li>
 <% end %>
 </ul>
-  <!--for each issues in the state/national issues table, create an accordion entry-->
-    <div class="tab">
-      <input id="tab-one" type="checkbox" name="tabs">
-      <label for="tab-one">StateNationalIssues.IssueName</label>
-      <div class="tab-content">
-        <p> StateNationalIssues.IssueCategory</p>
-        <p> StateNationalIssues.IssueDesc</p>
-        <img src="StateNationalIssues.IssueImage"></img>
-        <button>Read More</button><!--path:StateNationalIssues.IssueReadMore>
-        <!--will resize images to be small-->
-      </div>
-    </div>
-    
   </div>
   <!--End of information from the database-->
   <div>
