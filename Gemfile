@@ -30,6 +30,7 @@ gem 'rspec_api_documentation'
 gem 'apitome'
 # JSON serializers
 gem 'active_model_serializers'
+gem 'rails_12factor', group: :production
 
 #Mel added this for ease of active state in nav
 gem 'active_link_to'
