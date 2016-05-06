@@ -1,17 +1,20 @@
-<h1 style="text-align: left" ; color="blue">Issues</h1>
-<p>This is a list of all national and state issues and possible candidates. For more information, click on the link.</p>
-<p>When you are ready to vote, click the "Vote Now" link- But make sure you've registered first!</p>
+<!--This is the Sample Ballot page-->
+<h1 style="text-align: left" ; color="blue">Sample Ballot</h1>
+<!--Gives directions to users about the web page-->
+<p>This is a sample ballot containing all national and state issues and possible candidates. For more information, click on the question mark.</p>
+<p>When you are ready to vote, click the "Vote Now" button- But make sure you've registered first!</p>
 <style>
+/*Styles the image to be a certain size*/
 .img {
 	width: '40px';
 	border-style: none;
 	height: '200px';
 }
-
+/*Scales the question circle 20% on hover*/
 .fa-question-circle:hover {
 	-webkit-transform: scale(1.2);
 }
-
+/*Scales the image for the choice 5% on hover*/
 .choice:hover {
 	-webkit-transform: scale(1.05);
 }
@@ -19,14 +22,48 @@
 .fa-question-circle {  
 	transition: font-size 0.35s ease; 
 }
-
+/*Modifies the slick slide bar, places it in the center of the page*/
 .slick-prev:before, .slick-next:before{
     color:#333;
 }
+.slick-slide img {
+	margin-left: auto;
+	margin-right: auto;
+}
+.slick-slide {
+	text-align: center;
+}
+/*Modifies the tooltip on hover over the image of the choice*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 </style>
+
 <script>
 $(function() {
 	/* javascript & jquery goes in a script block, you can keep it here */
+	/*Incorporate slick code, puts the slide bar in place on the webpage*/
 	$('.choice-list').slick({
   		dots: true,
   		infinite: true,
@@ -61,12 +98,15 @@ $(function() {
 		});
 	});
 </script>
-<% @issues.each do |issue| %>
+
+<!--Separates the National and State Issues provided to us from the Issues team. Makes each issue have choices-->
+<h1>National Issues</h1>
+<% @national_issues.each do |issue| %>
 	<div class="row">
 		<div class="col-md-12">
 			<h2>
 		      <%= issue.title %>
-		      <%= link_to issue_path(issue) do %>
+		      <%= link_to ballot_path(issue) do %>
 		      	<i class="fa fa-question-circle"></i>
 		      <% end %>
 		    </h2>
@@ -74,14 +114,40 @@ $(function() {
 	</div>
 	<div class="choice-list">
 		<% issue.choices.each do |choice| %>
-			<div class="choice">
-				<%= image_tag(choice.image_url, width: '100px', alt: choice.title) %>
+			<div class="choice" title="<%= choice.title %>">
+				<%= image_tag(choice.image_url, width: '100px', alt: choice.title, class: 'img-responsive') %>
 				<br/>
 				<%= choice.title %>
 			</div>
 		<% end %>
 	</div>
-
 <% end %>
+<br/>
+<br/>
+<br/>
+<!--State issues and their choices-->
+<h1>State Issues</h1>
+<% @state_issues.each do |issue| %>
+	<div class="row">
+		<div class="col-md-12">
+			<h2>
+		      <%= issue.title %>
+		      <%= link_to ballot_path(issue) do %>
+		      	<i class="fa fa-question-circle"></i>
+		      <% end %>
+		    </h2>
+		</div>
+	</div>
+	<div class="choice-list">
+		<% issue.choices.each do |choice| %>
+			<div class="choice" title="<%= choice.title %>">
+				<%= image_tag(choice.image_url, width: '100px', alt: choice.title, class: 'img-responsive') %>
+				<br/>
+				<%= choice.title %>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+<!--Button that directs users to the Vote Now/ Ballt Page-->
 <h1 style="text-align: left" ;><%= link_to "Vote Now", new_vote_path, class: "btn btn-default"%></h1>
 <br/>
