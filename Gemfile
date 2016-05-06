@@ -33,6 +33,8 @@ gem 'active_model_serializers'
 
 #Mel added this for ease of active state in nav
 gem 'active_link_to'
+#Mel added for google charts
+gem 'chartkick'
 
 group :development, :test do
   gem 'pry-rails'

@@ -1,5 +1,47 @@
-<h1>Votes#create</h1>
-<p>Find me in app/views/votes/create.html.erb</p>
+<h1>Thanks for Voting!</h1>
 
+<!-- BOOTSTRAP MODAL WAS HERE. REMOVED-->
+<!--http://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
+<div class="container-fluid"><!--start container-->
 
-<h1>Your vote has been recorded!</h1>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Share the Vote!</h4>
+        </div>
+        <div class="modal-body">
+          <div class="col-md-8 "><!--start div for sharing vote-->
+              <img src="/assets/Lakewood/I-Voted-Button-Web-Version.jpg" class="img-responsive" alt="I voted in CLETeenHack!"/>
+          </div>
+           <div class="col-md-4">
+            <p><a href="http://twitter.com"> Post to Twitter</a></p>
+            <p><a href="http://instagram.com"> Post to Instagram</a></p>
+            <p><a href="http://facebook.com"> Post to Facebook</a></p>
+            <p><a href="http://tumblr.com"> Post to Tumblr</a></p>
+          </div><!--end div-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div><!--end modal dialog to share your vote-->
+
+    <div class= "row"> <!-- horizontal container for the website--> 
+        <div class= "col-md-6"><!--start col-md-6-->
+            <!--add a responsive image-->
+            <img src="/assets/Lakewood/collage1.jpg" class="img-responsive" alt="I voted in CLETeenHack CLETeenVote!"/>
+         </div><!--end col-md-6-->
+         <div class= "col-md-6"><!--start col-md-6-->
+            <h2>Let's Make History!</h2><!--heading-->
+            <p>Congratulations, You Voted!  </p>
+             <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Share Your Vote!</button>
+            <p>Even as young adults, you still have the power to make an impact within your community, whether it be to sign a petition on a cause worth taking account in, or to vote to support what position you are for! Voting is one of the main pillars of our goverment, so when you have a chance to vote, get started!     </p><br />
+        </div><!--end col-md-6-->
+    </div><!--end row-->
+</div><!--end outer container-->
