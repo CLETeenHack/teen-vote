@@ -1,2 +1,126 @@
-<h1>Contact#index</h1>
-<p>Find me in app/views/contact/index.html.erb</p>
+<h1>Contact Us</h1>
+ 
+
+
+<style type="text/css">
+    .box {
+        height:40px;
+        width:40px;
+        color:white;
+        font-size:36px;
+        background-color:#ff0000;
+        float:left;
+        display:block;
+    }
+    
+    .link {
+        display:block;
+        float:right;
+    }
+    
+    .feeling {color:red;
+        font-family:cursive;
+        
+    }
+    .hello{ font-size: 18;
+        color: blue;
+        font-family:Arial Black;
+        
+    }
+    
+    .schoollink {
+        font-size: ;
+    }
+    h1 {
+        text-align :center;
+    }
+.schools{
+    font-size:30px;
+    text-align:center;
+}
+.ui-slider{ width: 400px; height: 15px; }
+</style>
+
+ <script>
+  $(function() {
+    $( "#slider" ).slider({
+      width:75,
+      height:10,
+      min: 1,
+      max: 5,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount" ).val(  ui.value );
+      }
+    });
+    $( "#amount" ).val(  $( "#slider" ).slider( "value" ) );
+  });
+  </script>
+</head>
+
+
+
+
+           
+
+    
+    <!--form/school-->
+<div class="container">
+        <div class= "col-md-6">
+
+    
+    <!-- form --->    
+        <form class=hello 
+        action="MAILTO:CleTeenHack@WeCanCodeIT.org." method="post" enctype="text/plain">
+      First name:<br>
+      <input type="text" name="firstname"><br>
+      Last name:<br>
+      <input type="text" name="lastname"><br>
+      email:<br>
+      <input type="text" name="email">
+      <br>
+      Phone number:<br>
+      <input type="text" name="phonenumber"><br>
+      <p class="feeling"> 
+      
+      <label for="amount">How Are You Feeling?<br>
+     "5" being Bad and "1" being Awesome!
+      </label>
+       
+      <img src="assets/image/emoji-f-up.png" alt="HTML5 Icon" width="410.5" height="70">
+      <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"> <br>
+    
+    </p>
+         
+    <div id="slider"></div>
+  Contact Subject:<br>
+  <input type="text" name="Contactsubjet"><br>
+  Comment:<br>
+   <textarea rows="4" cols="50">
+Write Your Comments Here! 
+</textarea> <br>
+
+   <input type="submit" value="Submit">
+
+
+  </form>
+  <!-- end of form -->
+  </div>
+  
+    <div class= "col-md-6">
+   
+    
+
+        
+   <h1>Schools</h1>
+   
+  
+ <a href="http://www.clevelandmetroschools.org/Page/2217" target="_blank" class="schools">John Marshall</a><br/>
+  <a href="http://www.east-cleveland.k12.oh.us/school_home.aspx?schoolID=12"  target="_blank" class="schools">Shaw</a><br/>
+   <a href="http://www.clevelandmetroschools.org/addamsbcc"  target="_blank" class="schools">Jane Addams</a><br/>
+   <a href="http://www.beaumontschool.org/"  target="_blank" class="schools">Beaumont</a><br/>
+   <a href="http://www.cleveland.com/westlake/index.ssf/2015/12/west_shore_chatter_rocky_river_4.html" class="schools" target="_blank" >West Shore</A><br/>
+ 
+<a href="https://www.facebook.com/cleteenhack" target="_blank" > <img width="100" src= "assets/image/fb.png"/></a>
+    </div>
+</div>
